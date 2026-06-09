@@ -263,36 +263,29 @@ section{position:relative}
 /* =========================================================
    BEFORE / AFTER
    ========================================================= */
-.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.work-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s}
-.work-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.work-video{position:relative;aspect-ratio:3/4;background:#0d1419;overflow:hidden}
-.work-video video{width:100%;height:100%;object-fit:contain;display:block;background:#0d1419}
-.work-badge{position:absolute;top:12px;left:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;background:rgba(107,120,66,.92);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border-radius:999px;backdrop-filter:blur(4px)}
-.work-body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
-.work-body h3{font-size:1.1rem;margin-bottom:8px}
-.work-body p{color:var(--muted);font-size:.9rem;margin:0 0 14px}
-.work-loc{margin-top:auto;display:inline-flex;align-items:center;gap:7px;color:var(--olive-600);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.85rem}
-.work-loc .icon{width:15px;height:15px}
-/* Featured landscape project — wider case under the 3-up grid */
-.work-feature{margin-top:24px;display:grid;grid-template-columns:1.3fr 1fr;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow .3s}
-.work-feature:hover{box-shadow:var(--shadow)}
-.feature-video{position:relative;aspect-ratio:4/3;background:#0d1419}
-.feature-video video{width:100%;height:100%;object-fit:cover;display:block;background:#0d1419}
-.feature-body{padding:36px 40px;display:flex;flex-direction:column;justify-content:center}
-.feature-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--olive-600);margin-bottom:14px}
-.feature-eyebrow::before{content:"";width:26px;height:2px;background:var(--olive-light);border-radius:2px}
-.feature-body h3{font-size:1.6rem;margin-bottom:12px}
-.feature-body p{color:var(--muted);font-size:1.02rem;margin:0 0 20px;max-width:46ch}
-.feature-body .work-loc{margin-top:0}
-@media(max-width:980px){.work-grid{grid-template-columns:repeat(3,1fr)}}
-/* Mobile: one project per row, stacked */
-@media(max-width:620px){
-  .work-grid{grid-template-columns:1fr;gap:18px}
-  .work-video{aspect-ratio:4/5}
-  .work-feature{grid-template-columns:1fr;margin-top:18px}
-  .feature-body{padding:24px 22px 26px}
-  .feature-body h3{font-size:1.35rem}
+/* Alternating case-study rows (media one side, write-up the other) */
+.cases{display:flex;flex-direction:column;gap:74px}
+.case{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.case-media{display:flex;justify-content:flex-start}
+.case-frame{position:relative;width:100%;max-width:380px;aspect-ratio:3/4;border-radius:20px;overflow:hidden;background:#0d1419;box-shadow:var(--shadow-lg);transform:rotate(-1.6deg);transition:transform .45s var(--ease)}
+.case:hover .case-frame{transform:rotate(0)}
+.case-frame video{width:100%;height:100%;object-fit:cover;display:block;background:#0d1419}
+.case-badge{position:absolute;top:14px;left:14px;z-index:2;display:inline-flex;align-items:center;gap:6px;background:rgba(107,120,66,.92);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border-radius:999px;backdrop-filter:blur(4px)}
+.case-body h3{font-size:clamp(1.55rem,2.7vw,2.15rem);margin-bottom:16px;letter-spacing:-.02em;line-height:1.12}
+.case-body p{color:#454d54;font-size:1.05rem;margin:0 0 20px;max-width:50ch}
+.case-loc{display:inline-flex;align-items:center;gap:8px;color:var(--olive-600);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem}
+.case-loc .icon{width:16px;height:16px}
+/* landscape clip gets a wider frame */
+.case--wide .case-frame{max-width:560px;aspect-ratio:4/3}
+/* alternate sides: even rows put media on the right and tilt the other way */
+.case:nth-child(even) .case-media{order:2;justify-content:flex-end}
+.case:nth-child(even) .case-frame{transform:rotate(1.6deg)}
+@media(max-width:820px){
+  .cases{gap:48px}
+  .case{grid-template-columns:1fr;gap:22px;max-width:520px;margin:0 auto}
+  .case-media,.case:nth-child(even) .case-media{order:-1;justify-content:center}
+  .case-frame,.case:nth-child(even) .case-frame{transform:none;max-width:100%}
+  .case--wide .case-frame{max-width:100%}
 }
 
 /* =========================================================
@@ -662,59 +655,74 @@ section{position:relative}
       <p>Watch four recent projects go from tired to transformed — real roofs, real results, all completed here in Derbyshire.</p>
     </div>
 
-    <!-- EDIT ME: match each project's title / blurb / location to what its video actually shows -->
-    <div class="work-grid">
-      <!-- Project 1 -->
-      <article class="work-card reveal">
-        <div class="work-video">
-          <span class="work-badge">Before &rarr; After</span>
-          <video data-autoplay src="before-after-animation-01.mp4" muted loop playsinline preload="metadata"></video>
-        </div>
-        <div class="work-body">
-          <h3>Full Slate Re-Roof</h3>
-          <p>A tired, leaking slate roof stripped and re-covered with new slate, breathable membrane and battens &mdash; watertight and built to last.</p>
-          <span class="work-loc"><svg class="icon"><use href="#ic-pin"/></svg> Belper</span>
-        </div>
-      </article>
-      <!-- Project 3 -->
-      <article class="work-card reveal d2">
-        <div class="work-video">
-          <span class="work-badge">Before &rarr; After</span>
-          <video data-autoplay src="before-after-animation-03.mp4" muted loop playsinline preload="metadata"></video>
-        </div>
-        <div class="work-body">
-          <h3>Full Re-Roof</h3>
-          <p>Stripped back and rebuilt with fresh felt, battens and interlocking tiles, finished with new ridge and verge for a clean, lasting result.</p>
-          <span class="work-loc"><svg class="icon"><use href="#ic-pin"/></svg> Matlock</span>
-        </div>
-      </article>
-      <!-- Project 4 -->
-      <article class="work-card reveal d3">
-        <div class="work-video">
-          <span class="work-badge">Before &rarr; After</span>
-          <video data-autoplay src="before-after-animation-04.mp4" muted loop playsinline preload="metadata"></video>
-        </div>
-        <div class="work-body">
-          <h3>Loft Conversion Re-Roof</h3>
-          <p>A full re-roof as part of a loft conversion &mdash; new structure, membrane and tiles bringing the whole roofline up to a modern standard.</p>
-          <span class="work-loc"><svg class="icon"><use href="#ic-pin"/></svg> Derby</span>
-        </div>
-      </article>
-    </div>
+    <!-- EDIT ME: match each project's label / heading / blurb / location to what its video actually shows -->
+    <div class="cases">
 
-    <!-- Featured landscape project (different resolution — shown larger) -->
-    <article class="work-feature reveal">
-      <div class="feature-video">
-        <span class="work-badge">Before &rarr; After</span>
-        <video data-autoplay src="before-after-animation-02.mp4" muted loop playsinline preload="metadata"></video>
-      </div>
-      <div class="feature-body">
-        <span class="feature-eyebrow">Featured Project</span>
-        <h3>Conservatory Warm Roof</h3>
-        <p>An old polycarbonate conservatory roof replaced with a fully insulated, tiled warm roof &mdash; transforming a cold, unusable space into a bright room the family can enjoy right through the year.</p>
-        <span class="work-loc"><svg class="icon"><use href="#ic-pin"/></svg> Ripley</span>
-      </div>
-    </article>
+      <!-- Project 1 — media left -->
+      <article class="case reveal">
+        <div class="case-media">
+          <div class="case-frame">
+            <span class="case-badge">Before &rarr; After</span>
+            <video data-autoplay src="before-after-animation-01.mp4" muted loop playsinline preload="metadata"></video>
+          </div>
+        </div>
+        <div class="case-body">
+          <span class="eyebrow">Slate Re-Roof</span>
+          <h3>A tired roof made watertight again</h3>
+          <p>We stripped this worn, leaking slate roof right back, then re-covered it with new natural slate over a breathable membrane and fresh battens. The chimney was re-flashed and the ridge re-bedded, leaving a roof that's straight, smart and built to keep the weather out for decades to come.</p>
+          <span class="case-loc"><svg class="icon"><use href="#ic-pin"/></svg> Belper</span>
+        </div>
+      </article>
+
+      <!-- Project 2 — landscape clip, media right -->
+      <article class="case case--wide reveal">
+        <div class="case-media">
+          <div class="case-frame">
+            <span class="case-badge">Before &rarr; After</span>
+            <video data-autoplay src="before-after-animation-02.mp4" muted loop playsinline preload="metadata"></video>
+          </div>
+        </div>
+        <div class="case-body">
+          <span class="eyebrow">Conservatory Warm Roof</span>
+          <h3>From cold add-on to year-round room</h3>
+          <p>This old polycarbonate conservatory roof was freezing in winter and baking in summer. We replaced it with a fully insulated, tiled warm roof &mdash; quiet, energy-efficient and finished with a smooth plastered ceiling inside. A wasted space became a bright room the family now uses all year round.</p>
+          <span class="case-loc"><svg class="icon"><use href="#ic-pin"/></svg> Ripley</span>
+        </div>
+      </article>
+
+      <!-- Project 3 — media left -->
+      <article class="case reveal">
+        <div class="case-media">
+          <div class="case-frame">
+            <span class="case-badge">Before &rarr; After</span>
+            <video data-autoplay src="before-after-animation-03.mp4" muted loop playsinline preload="metadata"></video>
+          </div>
+        </div>
+        <div class="case-body">
+          <span class="eyebrow">Full Re-Roof</span>
+          <h3>Stripped back and built to last</h3>
+          <p>Taken right back to the rafters and rebuilt properly: new felt, treated battens and interlocking tiles, with fresh ridge, verge and leadwork throughout. The finish is clean and uniform &mdash; sealing the whole home against the worst of the Derbyshire weather.</p>
+          <span class="case-loc"><svg class="icon"><use href="#ic-pin"/></svg> Matlock</span>
+        </div>
+      </article>
+
+      <!-- Project 4 — media right -->
+      <article class="case reveal">
+        <div class="case-media">
+          <div class="case-frame">
+            <span class="case-badge">Before &rarr; After</span>
+            <video data-autoplay src="before-after-animation-04.mp4" muted loop playsinline preload="metadata"></video>
+          </div>
+        </div>
+        <div class="case-body">
+          <span class="eyebrow">Loft Conversion Re-Roof</span>
+          <h3>A new roofline for a bigger home</h3>
+          <p>As part of a full loft conversion we re-roofed the entire property &mdash; new structure, membrane and tiles bringing the whole roofline up to a modern, weatherproof standard, ready for the extra living space created below.</p>
+          <span class="case-loc"><svg class="icon"><use href="#ic-pin"/></svg> Derby</span>
+        </div>
+      </article>
+
+    </div>
   </div>
 </section>
 
