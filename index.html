@@ -263,30 +263,20 @@ section{position:relative}
 /* =========================================================
    BEFORE / AFTER
    ========================================================= */
-.ba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-bottom:46px}
-.ba-wrap{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:14px;box-shadow:var(--shadow-sm)}
-.ba{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;user-select:none;touch-action:pan-y}
-.ba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none}
-.ba-before{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
-.ba-label{position:absolute;top:14px;z-index:3;background:rgba(25,38,47,.82);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px;backdrop-filter:blur(4px);pointer-events:none}
-.ba-label--before{left:14px}
-.ba-label--after{right:14px;background:rgba(107,120,66,.9)}
-.ba-line{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;background:#fff;transform:translateX(-50%);z-index:3;pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
-.ba-handle{position:absolute;top:50%;left:var(--pos,50%);transform:translate(-50%,-50%);z-index:4;width:48px;height:48px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.3);pointer-events:none}
-.ba-handle .icon{width:24px;height:24px}
-.ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none;background:transparent;z-index:5}
-.ba-range::-webkit-slider-thumb{-webkit-appearance:none;width:56px;height:300px;cursor:ew-resize}
-.ba-range::-moz-range-thumb{width:56px;height:300px;border:0;background:transparent;cursor:ew-resize}
-.ba-cap{display:flex;align-items:center;gap:10px;padding:14px 8px 6px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--navy)}
-.ba-cap .icon{width:17px;height:17px;color:var(--olive-600)}
-.ba-cap small{margin-left:auto;font-family:'Inter',sans-serif;font-weight:500;color:var(--muted);font-size:.84rem}
-/* videos */
-.ba-videos{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
-.ba-video{background:#0d1419;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm)}
-.ba-video video{width:100%;aspect-ratio:16/9;object-fit:contain;background:#0d1419;display:block}
-.ba-video .vcap{display:flex;align-items:center;gap:10px;padding:13px 18px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.92rem;background:#0d1419}
-.ba-video .vcap .icon{width:17px;height:17px;color:var(--olive-light)}
-@media(max-width:760px){.ba-grid{grid-template-columns:1fr}.ba-videos{grid-template-columns:1fr}}
+.work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.work-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s}
+.work-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.work-video{position:relative;aspect-ratio:3/4;background:#0d1419;overflow:hidden}
+.work-video video{width:100%;height:100%;object-fit:contain;display:block;background:#0d1419}
+.work-badge{position:absolute;top:12px;left:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;background:rgba(107,120,66,.92);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border-radius:999px;backdrop-filter:blur(4px)}
+.work-body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+.work-body h3{font-size:1.1rem;margin-bottom:8px}
+.work-body p{color:var(--muted);font-size:.9rem;margin:0 0 14px}
+.work-loc{margin-top:auto;display:inline-flex;align-items:center;gap:7px;color:var(--olive-600);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.85rem}
+.work-loc .icon{width:15px;height:15px}
+@media(max-width:1040px){.work-grid{grid-template-columns:repeat(2,1fr)}}
+/* Mobile: one project per row, stacked */
+@media(max-width:620px){.work-grid{grid-template-columns:1fr;gap:18px}.work-video{aspect-ratio:4/5}}
 
 /* =========================================================
    PROJECT GALLERY  (masonry, full-image, no crop)
@@ -652,74 +642,59 @@ section{position:relative}
     <div class="section-head">
       <span class="eyebrow center">The Transformation</span>
       <h2>Before &amp; After</h2>
-      <p>Drag the slider on each project to see the difference for yourself — real roofs, real results, all completed here in Derbyshire.</p>
+      <p>Watch four recent projects go from tired to transformed — real roofs, real results, all completed here in Derbyshire.</p>
     </div>
 
-    <div class="ba-grid">
-      <!-- Pair 1 -->
-      <div class="ba-wrap reveal">
-        <figure class="ba" style="--pos:50%">
-          <img class="ba-img ba-after" src="a1.jpg" alt="After — newly re-slated roof and repointed chimney">
-          <img class="ba-img ba-before" src="b1.jpg" alt="Before — damaged slate roof with broken tiles">
-          <span class="ba-label ba-label--before">Before</span>
-          <span class="ba-label ba-label--after">After</span>
-          <span class="ba-line"></span>
-          <span class="ba-handle"><svg class="icon"><use href="#ic-arrows-lr"/></svg></span>
-          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
-        </figure>
-        <figcaption class="ba-cap"><svg class="icon"><use href="#ic-pin"/></svg> Slate Roof Renewal <small>Belper</small></figcaption>
-      </div>
-      <!-- Pair 2 -->
-      <div class="ba-wrap reveal d1">
-        <figure class="ba" style="--pos:50%">
-          <img class="ba-img ba-after" src="a2.jpg" alt="After — new warm tiled conservatory roof">
-          <img class="ba-img ba-before" src="b2.jpg" alt="Before — old polycarbonate conservatory roof">
-          <span class="ba-label ba-label--before">Before</span>
-          <span class="ba-label ba-label--after">After</span>
-          <span class="ba-line"></span>
-          <span class="ba-handle"><svg class="icon"><use href="#ic-arrows-lr"/></svg></span>
-          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
-        </figure>
-        <figcaption class="ba-cap"><svg class="icon"><use href="#ic-pin"/></svg> Conservatory Warm Roof <small>Ripley</small></figcaption>
-      </div>
-      <!-- Pair 3 -->
-      <div class="ba-wrap reveal">
-        <figure class="ba" style="--pos:50%">
-          <img class="ba-img ba-after" src="a3.jpg" alt="After — fully re-tiled roof">
-          <img class="ba-img ba-before" src="b3.jpg" alt="Before — roof stripped back to battens">
-          <span class="ba-label ba-label--before">Before</span>
-          <span class="ba-label ba-label--after">After</span>
-          <span class="ba-line"></span>
-          <span class="ba-handle"><svg class="icon"><use href="#ic-arrows-lr"/></svg></span>
-          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
-        </figure>
-        <figcaption class="ba-cap"><svg class="icon"><use href="#ic-pin"/></svg> Full Re-Roof <small>Matlock</small></figcaption>
-      </div>
-      <!-- Pair 4 -->
-      <div class="ba-wrap reveal d1">
-        <figure class="ba" style="--pos:50%">
-          <img class="ba-img ba-after" src="a4.jpg" alt="After — new grey tiled roof on extension">
-          <img class="ba-img ba-before" src="b4.jpg" alt="Before — old roof stripped during loft conversion">
-          <span class="ba-label ba-label--before">Before</span>
-          <span class="ba-label ba-label--after">After</span>
-          <span class="ba-line"></span>
-          <span class="ba-handle"><svg class="icon"><use href="#ic-arrows-lr"/></svg></span>
-          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
-        </figure>
-        <figcaption class="ba-cap"><svg class="icon"><use href="#ic-pin"/></svg> Loft Conversion Re-Roof <small>Derby</small></figcaption>
-      </div>
-    </div>
-
-    <!-- transformation videos -->
-    <div class="ba-videos">
-      <div class="ba-video reveal">
-        <video src="before-after-animation-01.mp4" autoplay muted loop playsinline preload="metadata"></video>
-        <div class="vcap"><svg class="icon"><use href="#ic-play"/></svg> Transformation in motion</div>
-      </div>
-      <div class="ba-video reveal d1">
-        <video src="before-after-animation-02.mp4" autoplay muted loop playsinline preload="metadata"></video>
-        <div class="vcap"><svg class="icon"><use href="#ic-play"/></svg> From tired to transformed</div>
-      </div>
+    <!-- EDIT ME: match each project's title / blurb / location to what its video actually shows -->
+    <div class="work-grid">
+      <!-- Project 1 -->
+      <article class="work-card reveal">
+        <div class="work-video">
+          <span class="work-badge">Before &rarr; After</span>
+          <video data-autoplay src="before-after-animation-01.mp4" muted loop playsinline preload="metadata"></video>
+        </div>
+        <div class="work-body">
+          <h3>Full Slate Re-Roof</h3>
+          <p>A tired, leaking slate roof stripped and re-covered with new slate, breathable membrane and battens &mdash; watertight and built to last.</p>
+          <span class="work-loc"><svg class="icon"><use href="#ic-pin"/></svg> Belper</span>
+        </div>
+      </article>
+      <!-- Project 2 -->
+      <article class="work-card reveal d1">
+        <div class="work-video">
+          <span class="work-badge">Before &rarr; After</span>
+          <video data-autoplay src="before-after-animation-02.mp4" muted loop playsinline preload="metadata"></video>
+        </div>
+        <div class="work-body">
+          <h3>Conservatory Warm Roof</h3>
+          <p>An old polycarbonate conservatory roof replaced with a fully insulated, tiled warm roof &mdash; a room you can finally use all year round.</p>
+          <span class="work-loc"><svg class="icon"><use href="#ic-pin"/></svg> Ripley</span>
+        </div>
+      </article>
+      <!-- Project 3 -->
+      <article class="work-card reveal d2">
+        <div class="work-video">
+          <span class="work-badge">Before &rarr; After</span>
+          <video data-autoplay src="before-after-animation-03.mp4" muted loop playsinline preload="metadata"></video>
+        </div>
+        <div class="work-body">
+          <h3>Full Re-Roof</h3>
+          <p>Stripped back and rebuilt with fresh felt, battens and interlocking tiles, finished with new ridge and verge for a clean, lasting result.</p>
+          <span class="work-loc"><svg class="icon"><use href="#ic-pin"/></svg> Matlock</span>
+        </div>
+      </article>
+      <!-- Project 4 -->
+      <article class="work-card reveal d3">
+        <div class="work-video">
+          <span class="work-badge">Before &rarr; After</span>
+          <video data-autoplay src="before-after-animation-04.mp4" muted loop playsinline preload="metadata"></video>
+        </div>
+        <div class="work-body">
+          <h3>Loft Conversion Re-Roof</h3>
+          <p>A full re-roof as part of a loft conversion &mdash; new structure, membrane and tiles bringing the whole roofline up to a modern standard.</p>
+          <span class="work-loc"><svg class="icon"><use href="#ic-pin"/></svg> Derby</span>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -1087,13 +1062,19 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMen
   start();
 })();
 
-/* ---------- BEFORE / AFTER sliders ---------- */
-document.querySelectorAll('.ba').forEach(ba => {
-  const range = ba.querySelector('.ba-range');
-  const apply = v => ba.style.setProperty('--pos', v + '%');
-  range.addEventListener('input', () => apply(range.value));
-  apply(range.value);
-});
+/* ---------- Project videos: play only while on-screen (saves data, esp. mobile) ---------- */
+(() => {
+  const vids = document.querySelectorAll('video[data-autoplay]');
+  if (!('IntersectionObserver' in window)) { vids.forEach(v => { v.muted = true; v.play().catch(()=>{}); }); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      const v = en.target;
+      if (en.isIntersecting) { v.muted = true; v.play().catch(()=>{}); }
+      else v.pause();
+    });
+  }, {threshold: 0.35});
+  vids.forEach(v => io.observe(v));
+})();
 
 /* ---------- REVIEWS slider (autoplay + swipe) ---------- */
 (() => {
