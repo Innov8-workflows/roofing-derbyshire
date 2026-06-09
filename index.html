@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roofing Derbyshire | Trusted Roofers Across Derbyshire | Free Quotes</title>
+<meta name="description" content="Roofing Derbyshire — local, family-run roofing specialists. Roof repairs, new roofs & re-roofing, flat roofing, chimneys, guttering and conservatory roofs across Derbyshire. Fully insured, guaranteed workmanship, free no-obligation quotes.">
+<meta name="theme-color" content="#243746">
+<link rel="icon" href="logo.png">
+
+<!-- ============================================================
+     >>> EDIT ME: business contact details live in ONE place <<<
+     Phone / WhatsApp are PLACEHOLDERS (Ofcom fiction range).
+     Replace below AND the JS PHONE config near the bottom.
+     - Display number ......... 07700 900123
+     - WhatsApp / tel ......... +44 7700 900123  (wa: 447700900123)
+     - Email .................. hello@roofingderbyshire.co.uk
+============================================================ -->
+
+<!-- Open Graph -->
+<meta property="og:title" content="Roofing Derbyshire | Trusted Roofers Across Derbyshire">
+<meta property="og:description" content="Local, family-run roofing specialists. Fully insured, guaranteed workmanship, free no-obligation quotes across Derbyshire.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="hero3.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   TOKENS
+   ========================================================= */
+:root{
+  --navy:#243746;        /* logo roof — primary dark */
+  --navy-700:#2d4150;
+  --navy-900:#19262f;    /* footer / deep */
+  --olive:#6b7842;       /* logo accent — safe contrast both ways */
+  --olive-600:#5c6838;
+  --olive-700:#4f5a31;
+  --olive-light:#8a9656; /* decorative only */
+  --ink:#2a3138;
+  --muted:#6a727a;
+  --line:#e4e7df;
+  --bg:#ffffff;
+  --bg-soft:#f5f6f2;     /* warm off-white */
+  --bg-soft2:#eef0ea;
+  --wa:#25d366;
+  --gold:#f5a623;
+  --shadow-sm:0 2px 10px rgba(25,38,47,.06);
+  --shadow:0 14px 40px rgba(25,38,47,.12);
+  --shadow-lg:0 30px 70px rgba(25,38,47,.20);
+  --r:14px;
+  --r-lg:22px;
+  --container:1200px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  color:var(--navy);
+  line-height:1.12;
+  margin:0 0 .5em;
+  letter-spacing:-.02em;
+}
+h2{font-size:clamp(1.85rem,3.6vw,2.85rem);font-weight:800}
+h3{font-size:1.3rem;font-weight:700}
+p{margin:0 0 1rem}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 24px}
+section{position:relative}
+
+/* icons */
+.icon{width:24px;height:24px;display:inline-block;vertical-align:middle;flex:none}
+
+/* eyebrow (echoes the logo's flanked "DERBYSHIRE") */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--olive-600);margin-bottom:16px;
+}
+.eyebrow::before,.eyebrow.center::after{content:"";width:34px;height:2px;background:var(--olive-light);border-radius:2px}
+.eyebrow.center{justify-content:center}
+
+.section-head{max-width:680px;margin:0 auto 52px;text-align:center}
+.section-head p{color:var(--muted);font-size:1.06rem;margin:0}
+
+.pad{padding:clamp(64px,9vw,118px) 0}
+.soft{background:var(--bg-soft)}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn{
+  --bg:var(--olive);--fg:#fff;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;
+  padding:15px 26px;border-radius:999px;border:2px solid transparent;
+  background:var(--bg);color:var(--fg);cursor:pointer;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s,color .2s,border-color .2s;
+  box-shadow:0 10px 24px rgba(107,120,66,.28);
+  white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(107,120,66,.36);background:var(--olive-600)}
+.btn .icon{width:20px;height:20px}
+.btn--navy{background:var(--navy);box-shadow:0 10px 24px rgba(36,55,70,.30)}
+.btn--navy:hover{background:var(--navy-700);box-shadow:0 16px 32px rgba(36,55,70,.4)}
+.btn--ghost{background:transparent;color:var(--navy);border-color:rgba(36,55,70,.22);box-shadow:none}
+.btn--ghost:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn--light{background:#fff;color:var(--navy);box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.btn--light:hover{background:#f1f2ee;color:var(--navy)}
+.btn--outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.45);box-shadow:none}
+.btn--outline-light:hover{background:#fff;color:var(--navy)}
+.btn--lg{padding:17px 32px;font-size:1.06rem}
+
+/* =========================================================
+   TOP UTILITY BAR
+   ========================================================= */
+.topbar{background:var(--navy-900);color:#cdd4d1;font-size:.86rem}
+.topbar .container{display:flex;align-items:center;justify-content:space-between;height:42px;gap:18px}
+.topbar a{color:#eef1ef;font-weight:600}
+.topbar .tb-left{display:flex;align-items:center;gap:8px;min-width:0}
+.topbar .tb-left .icon{width:16px;height:16px;color:var(--olive-light)}
+.topbar .tb-right{display:flex;align-items:center;gap:20px}
+.topbar .tb-right .tb-item{display:flex;align-items:center;gap:7px}
+.topbar .tb-right .icon{width:15px;height:15px;color:var(--olive-light)}
+.topbar .tb-mute{color:#9fb0aa}
+@media(max-width:860px){.topbar .tb-right .tb-hide{display:none}}
+@media(max-width:520px){.topbar .tb-left span{display:none}}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow .3s,background .3s}
+.nav.scrolled{box-shadow:0 6px 24px rgba(25,38,47,.09)}
+.nav .container{display:flex;align-items:center;justify-content:space-between;height:80px;gap:24px;transition:height .3s}
+.nav.scrolled .container{height:68px}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand img{height:52px;width:auto;transition:height .3s}
+.nav.scrolled .brand img{height:46px}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}
+.nav-links a{
+  font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.97rem;color:var(--navy);
+  padding:10px 14px;border-radius:8px;position:relative;transition:color .2s;
+}
+.nav-links a::after{content:"";position:absolute;left:14px;right:14px;bottom:6px;height:2px;background:var(--olive);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
+.nav-links a:hover{color:var(--olive-600)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{display:flex;align-items:center;gap:12px;flex:none}
+.nav-call{display:inline-flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;color:var(--navy);font-size:1.02rem}
+.nav-call .ring{width:42px;height:42px;border-radius:50%;background:var(--olive);color:#fff;display:grid;place-items:center;box-shadow:0 8px 18px rgba(107,120,66,.32)}
+.nav-call .ring .icon{width:19px;height:19px}
+.nav-call small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);line-height:1}
+.nav-call b{font-size:1.04rem;letter-spacing:.01em}
+.nav-toggle{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:11px;background:#fff;cursor:pointer;align-items:center;justify-content:center;color:var(--navy)}
+.nav-toggle .icon{width:24px;height:24px}
+.nav-call-icon{display:none;width:46px;height:46px;border-radius:50%;background:var(--olive);color:#fff;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(107,120,66,.32)}
+
+@media(max-width:1040px){
+  .nav-links{position:fixed;inset:0 0 0 auto;width:min(82vw,360px);background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:96px 22px 28px;transform:translateX(100%);transition:transform .35s var(--ease);box-shadow:-20px 0 60px rgba(0,0,0,.18);margin:0}
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{padding:15px 12px;font-size:1.12rem;border-bottom:1px solid var(--line)}
+  .nav-links a::after{display:none}
+  .nav-toggle{display:flex}
+  .nav-call .nav-call-text{display:none}
+  .nav-call .ring{display:none}
+  .nav-call-icon{display:flex}
+  body.menu-open{overflow:hidden}
+  .nav-scrim{position:fixed;inset:0;background:rgba(25,38,47,.5);opacity:0;visibility:hidden;transition:.3s;z-index:55}
+  .nav-scrim.show{opacity:1;visibility:visible}
+}
+
+/* =========================================================
+   HERO SLIDER
+   ========================================================= */
+.hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;background:var(--navy)}
+.hero-slides{position:absolute;inset:0;z-index:0}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s var(--ease);background-size:cover;background-position:center;transform:scale(1.06)}
+.hero-slide.active{opacity:1;animation:kenburns 8s ease-out forwards}
+@keyframes kenburns{from{transform:scale(1.12)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(20,32,40,.92) 0%,rgba(25,38,47,.80) 38%,rgba(36,55,70,.46) 70%,rgba(36,55,70,.30) 100%)}
+.hero .container{position:relative;z-index:2;padding-top:60px;padding-bottom:60px}
+.hero-inner{max-width:700px;color:#fff}
+.hero .pill{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:9px 16px;border-radius:999px;font-weight:600;font-size:.83rem;letter-spacing:.04em;margin-bottom:24px;backdrop-filter:blur(6px)}
+.hero .pill .icon{width:16px;height:16px;color:var(--olive-light)}
+.hero h1{color:#fff;font-size:clamp(2.3rem,5.4vw,4.1rem);font-weight:800;margin-bottom:20px}
+.hero h1 .hl{color:#b9c587;position:relative;white-space:nowrap}
+.hero-sub{font-size:clamp(1.05rem,1.7vw,1.25rem);color:#dfe5e2;max-width:560px;margin-bottom:34px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:38px}
+.hero-trust{display:flex;flex-wrap:wrap;gap:14px 26px;color:#e7ebe8;font-weight:600;font-size:.92rem}
+.hero-trust span{display:inline-flex;align-items:center;gap:9px}
+.hero-trust .icon{width:19px;height:19px;color:var(--olive-light)}
+.hero-nav{position:absolute;z-index:3;bottom:30px;right:max(24px,calc((100vw - var(--container))/2 + 24px));display:flex;gap:10px}
+.hero-arrow{width:50px;height:50px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;display:grid;place-items:center;cursor:pointer;transition:.25s;backdrop-filter:blur(6px)}
+.hero-arrow:hover{background:#fff;color:var(--navy)}
+.hero-dots{position:absolute;z-index:3;bottom:46px;left:max(24px,calc((100vw - var(--container))/2 + 24px));display:flex;gap:9px}
+.hero-dot{width:34px;height:5px;border-radius:3px;background:rgba(255,255,255,.32);border:0;cursor:pointer;padding:0;transition:.3s}
+.hero-dot.active{background:var(--olive-light);width:50px}
+@media(max-width:680px){
+  .hero{min-height:86vh}
+  .hero-nav{display:none}
+  .hero-cta .btn{flex:1 1 100%}
+}
+
+/* =========================================================
+   TRUST / ACCREDITATIONS
+   ========================================================= */
+.trust{background:#fff;border-bottom:1px solid var(--line)}
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:40px 0}
+.trust-item{display:flex;align-items:center;gap:14px}
+.trust-item .ti-ic{width:52px;height:52px;border-radius:13px;background:var(--bg-soft);color:var(--olive-600);display:grid;place-items:center;flex:none}
+.trust-item .ti-ic .icon{width:26px;height:26px}
+.trust-item b{display:block;font-family:'Plus Jakarta Sans',sans-serif;color:var(--navy);font-size:1.02rem}
+.trust-item span{font-size:.86rem;color:var(--muted)}
+.accred{border-top:1px dashed var(--line);padding:26px 0;display:flex;align-items:center;justify-content:center;gap:14px 30px;flex-wrap:wrap}
+.accred .label{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+/* Accreditation chips — PLACEHOLDERS. Swap for real <img> logos when supplied. */
+.accred-chip{display:inline-flex;align-items:center;gap:9px;border:1.5px solid var(--line);border-radius:11px;padding:11px 16px;color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.92rem;background:#fff;filter:grayscale(.15);transition:.25s}
+.accred-chip:hover{border-color:var(--olive-light);box-shadow:var(--shadow-sm)}
+.accred-chip .icon{width:20px;height:20px;color:var(--olive-600)}
+.accred-chip small{font-weight:500;color:var(--muted);font-size:.74rem;font-family:'Inter',sans-serif}
+@media(max-width:880px){.trust-row{grid-template-columns:repeat(2,1fr);gap:26px 20px}}
+@media(max-width:480px){.trust-row{grid-template-columns:1fr}}
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.svc-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 26px;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s;position:relative;overflow:hidden}
+.svc-card::before{content:"";position:absolute;left:0;top:0;height:100%;width:4px;background:var(--olive);transform:scaleY(0);transform-origin:top;transition:transform .3s var(--ease)}
+.svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.svc-card:hover::before{transform:scaleY(1)}
+.svc-ic{width:62px;height:62px;border-radius:16px;background:linear-gradient(150deg,#eef1e6,#e3e8d6);color:var(--olive-700);display:grid;place-items:center;margin-bottom:20px;transition:.3s}
+.svc-card:hover .svc-ic{background:var(--navy);color:#fff}
+.svc-ic .icon{width:30px;height:30px}
+.svc-card h3{margin-bottom:8px}
+.svc-card p{color:var(--muted);font-size:.95rem;margin:0}
+@media(max-width:1040px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
+
+/* =========================================================
+   BEFORE / AFTER
+   ========================================================= */
+.ba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-bottom:46px}
+.ba-wrap{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:14px;box-shadow:var(--shadow-sm)}
+.ba{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:14px;user-select:none;touch-action:pan-y}
+.ba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none}
+.ba-before{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.ba-label{position:absolute;top:14px;z-index:3;background:rgba(25,38,47,.82);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px;backdrop-filter:blur(4px);pointer-events:none}
+.ba-label--before{left:14px}
+.ba-label--after{right:14px;background:rgba(107,120,66,.9)}
+.ba-line{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;background:#fff;transform:translateX(-50%);z-index:3;pointer-events:none;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.ba-handle{position:absolute;top:50%;left:var(--pos,50%);transform:translate(-50%,-50%);z-index:4;width:48px;height:48px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.3);pointer-events:none}
+.ba-handle .icon{width:24px;height:24px}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none;background:transparent;z-index:5}
+.ba-range::-webkit-slider-thumb{-webkit-appearance:none;width:56px;height:300px;cursor:ew-resize}
+.ba-range::-moz-range-thumb{width:56px;height:300px;border:0;background:transparent;cursor:ew-resize}
+.ba-cap{display:flex;align-items:center;gap:10px;padding:14px 8px 6px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--navy)}
+.ba-cap .icon{width:17px;height:17px;color:var(--olive-600)}
+.ba-cap small{margin-left:auto;font-family:'Inter',sans-serif;font-weight:500;color:var(--muted);font-size:.84rem}
+/* videos */
+.ba-videos{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.ba-video{background:#0d1419;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm)}
+.ba-video video{width:100%;aspect-ratio:16/9;object-fit:contain;background:#0d1419;display:block}
+.ba-video .vcap{display:flex;align-items:center;gap:10px;padding:13px 18px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.92rem;background:#0d1419}
+.ba-video .vcap .icon{width:17px;height:17px;color:var(--olive-light)}
+@media(max-width:760px){.ba-grid{grid-template-columns:1fr}.ba-videos{grid-template-columns:1fr}}
+
+/* =========================================================
+   PROJECT GALLERY  (masonry, full-image, no crop)
+   ========================================================= */
+.gallery{columns:3;column-gap:18px}
+.gallery figure{margin:0 0 18px;break-inside:avoid;border-radius:var(--r);overflow:hidden;position:relative;cursor:pointer;box-shadow:var(--shadow-sm);background:#000}
+.gallery img{width:100%;height:auto;transition:transform .55s var(--ease)}
+.gallery figure::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(25,38,47,.55),transparent 55%);opacity:0;transition:.3s}
+.gallery .g-zoom{position:absolute;right:14px;bottom:14px;z-index:2;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);display:grid;place-items:center;opacity:0;transform:translateY(6px);transition:.3s}
+.gallery .g-zoom .icon{width:20px;height:20px}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figure:hover::after,.gallery figure:hover .g-zoom{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.gallery{columns:2}}
+@media(max-width:540px){.gallery{columns:1}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:120;background:rgba(13,20,25,.93);display:none;align-items:center;justify-content:center;padding:30px}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:86vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb-btn{position:absolute;width:54px;height:54px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;display:grid;place-items:center;transition:.2s}
+.lb-btn:hover{background:#fff;color:var(--navy)}
+.lb-close{top:24px;right:24px}
+.lb-prev{left:24px;top:50%;transform:translateY(-50%)}
+.lb-next{right:24px;top:50%;transform:translateY(-50%)}
+.lb-btn .icon{width:26px;height:26px}
+@media(max-width:600px){.lb-prev,.lb-next{display:none}}
+
+/* =========================================================
+   WHY CHOOSE US
+   ========================================================= */
+.why{background:var(--navy);color:#fff;overflow:hidden}
+.why h2{color:#fff}
+.why .eyebrow{color:#b9c587}
+.why .eyebrow::before{background:var(--olive-light)}
+.why-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:54px;align-items:center}
+.why-list{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px}
+.why-item{display:flex;gap:15px}
+.why-item .wi-ic{width:50px;height:50px;border-radius:13px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#b9c587;display:grid;place-items:center;flex:none}
+.why-item .wi-ic .icon{width:25px;height:25px}
+.why-item h3{color:#fff;font-size:1.08rem;margin-bottom:4px}
+.why-item p{color:#c6cfca;font-size:.9rem;margin:0}
+.why-visual{position:relative}
+.why-visual img{width:100%;border-radius:var(--r-lg);box-shadow:var(--shadow-lg);aspect-ratio:4/5;object-fit:cover}
+.why-badge{position:absolute;left:-22px;bottom:30px;background:#fff;color:var(--navy);border-radius:18px;padding:20px 24px;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:14px;max-width:260px}
+.why-badge .wb-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:2.3rem;color:var(--olive-600);line-height:1}
+.why-badge .wb-t{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.96rem;line-height:1.2}
+.why-badge small{display:block;color:var(--muted);font-weight:500;font-size:.8rem;font-family:'Inter',sans-serif}
+@media(max-width:920px){.why-grid{grid-template-columns:1fr;gap:40px}.why-visual{max-width:440px;margin:0 auto}}
+@media(max-width:520px){.why-list{grid-template-columns:1fr}.why-badge{left:12px}}
+
+/* =========================================================
+   REVIEWS
+   ========================================================= */
+.rev-top{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:42px;flex-wrap:wrap}
+.rev-score{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 22px;box-shadow:var(--shadow-sm)}
+.rev-score .icon{width:34px;height:34px}
+.rev-score .rs-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.7rem;color:var(--navy);line-height:1}
+.rev-score .stars{display:flex;gap:2px;color:var(--gold)}
+.rev-score .stars .icon{width:16px;height:16px}
+.rev-score small{color:var(--muted);font-size:.84rem}
+.rev-viewport{overflow:hidden}
+.rev-track{display:flex;gap:24px;transition:transform .55s var(--ease);will-change:transform}
+.rev-card{flex:0 0 calc((100% - 48px)/3);background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;min-height:260px}
+.rev-card .rc-head{display:flex;align-items:center;gap:13px;margin-bottom:16px}
+.rev-card .rc-av{width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1.1rem;flex:none}
+.rev-card .rc-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--navy);font-size:1rem;line-height:1.2}
+.rev-card .rc-meta{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.8rem}
+.rev-card .rc-meta .icon{width:14px;height:14px}
+.rev-card .rc-g{margin-left:auto}
+.rev-card .rc-g .icon{width:22px;height:22px}
+.rev-card .rc-stars{display:flex;gap:3px;color:var(--gold);margin-bottom:12px}
+.rev-card .rc-stars .icon{width:18px;height:18px}
+.rev-card p{color:var(--ink);font-size:.96rem;margin:0}
+.rev-card .rc-loc{margin-top:auto;padding-top:16px;color:var(--muted);font-size:.82rem;display:flex;align-items:center;gap:7px}
+.rev-card .rc-loc .icon{width:15px;height:15px;color:var(--olive-600)}
+.rev-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:34px}
+.rev-arrow{width:50px;height:50px;border-radius:50%;border:1.5px solid var(--line);background:#fff;color:var(--navy);cursor:pointer;display:grid;place-items:center;transition:.25s}
+.rev-arrow:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.rev-dots{display:flex;gap:8px}
+.rev-dot{width:9px;height:9px;border-radius:50%;background:var(--line);border:0;cursor:pointer;padding:0;transition:.3s}
+.rev-dot.active{background:var(--olive);width:26px;border-radius:5px}
+@media(max-width:980px){.rev-card{flex-basis:calc((100% - 24px)/2)}}
+@media(max-width:660px){.rev-card{flex-basis:100%}}
+
+/* =========================================================
+   ABOUT / OWNER
+   ========================================================= */
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
+.about-visual{position:relative}
+.about-visual .av-main{width:100%;border-radius:var(--r-lg);box-shadow:var(--shadow);aspect-ratio:4/5;object-fit:cover}
+.about-visual .av-sub{position:absolute;right:-20px;bottom:-26px;width:46%;border-radius:16px;border:5px solid #fff;box-shadow:var(--shadow-lg);aspect-ratio:1/1;object-fit:cover}
+.about-owner{display:flex;align-items:center;gap:16px;margin:8px 0 22px;padding:16px 20px;background:var(--bg-soft);border-radius:16px;border:1px solid var(--line)}
+.about-owner .ao-av{width:60px;height:60px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:.04em;flex:none}
+.about-owner b{font-family:'Plus Jakarta Sans',sans-serif;color:var(--navy);font-size:1.08rem}
+.about-owner span{color:var(--muted);font-size:.9rem}
+.about p{color:#454d54}
+.about-stats{display:flex;gap:30px;flex-wrap:wrap;margin-top:26px}
+.about-stat b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:2.1rem;color:var(--olive-600);line-height:1}
+.about-stat span{color:var(--muted);font-size:.88rem}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:60px}.about-visual{max-width:430px}.about-visual .av-sub{right:8px}}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px}
+.contact-info .ci-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.contact-info .ci-item:first-of-type{padding-top:0}
+.contact-info .ci-ic{width:50px;height:50px;border-radius:13px;background:var(--bg-soft);color:var(--olive-600);display:grid;place-items:center;flex:none}
+.contact-info .ci-ic .icon{width:24px;height:24px}
+.contact-info .ci-item small{display:block;color:var(--muted);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:2px}
+.contact-info .ci-item a,.contact-info .ci-item b{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--navy);font-size:1.12rem}
+.contact-info .ci-item p{margin:0;color:var(--muted);font-size:.92rem}
+.contact-hours{margin-top:24px;background:var(--navy);color:#fff;border-radius:16px;padding:22px 24px}
+.contact-hours b{font-family:'Plus Jakarta Sans',sans-serif;display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.contact-hours b .icon{width:18px;height:18px;color:var(--olive-light)}
+.contact-hours .row{display:flex;justify-content:space-between;font-size:.92rem;color:#cdd6d1;padding:4px 0}
+.contact-hours .row span:last-child{color:#fff;font-weight:600}
+
+.form-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:34px;box-shadow:var(--shadow)}
+.form-card h3{margin-bottom:6px}
+.form-card .fc-sub{color:var(--muted);font-size:.94rem;margin-bottom:22px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:600;font-size:.86rem;color:var(--navy);margin-bottom:7px}
+.field label .req{color:var(--olive-600)}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:11px;background:var(--bg-soft);
+  font-family:'Inter',sans-serif;font-size:.97rem;color:var(--ink);transition:.2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--olive);background:#fff;box-shadow:0 0 0 4px rgba(107,120,66,.12)}
+.field textarea{resize:vertical;min-height:110px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-card .btn{width:100%;margin-top:6px}
+.form-note{display:flex;align-items:center;gap:9px;justify-content:center;margin-top:14px;color:var(--muted);font-size:.84rem}
+.form-note .icon{width:16px;height:16px;color:var(--wa)}
+.form-ok{display:none;align-items:flex-start;gap:12px;background:#eaf6ee;border:1px solid #bfe6cd;color:#1f7a44;border-radius:12px;padding:14px 16px;margin-top:16px;font-size:.92rem}
+.form-ok.show{display:flex}
+.form-ok .icon{width:20px;height:20px;flex:none;margin-top:2px}
+@media(max-width:880px){.contact-grid{grid-template-columns:1fr;gap:40px}.field-row{grid-template-columns:1fr}}
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+.final-cta{position:relative;color:#fff;text-align:center;background:linear-gradient(rgba(25,38,47,.86),rgba(79,90,49,.62)),url('hero2.jpg') center/cover fixed;padding:clamp(72px,10vw,128px) 0}
+.final-cta h2{color:#fff;font-size:clamp(2rem,4.4vw,3.3rem);max-width:760px;margin:0 auto 18px}
+.final-cta p{color:#e6eae3;font-size:1.12rem;max-width:560px;margin:0 auto 34px}
+.final-cta .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+@media(max-width:600px){.final-cta{background-attachment:scroll}.final-cta .cta-row .btn{flex:1 1 100%}}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer{background:var(--navy-900);color:#aeb8b3;padding:72px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.09)}
+.f-brand .f-logo{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.f-logo .f-mark{width:46px;height:46px;border-radius:11px;background:linear-gradient(150deg,var(--olive),var(--olive-700));display:grid;place-items:center;color:#fff}
+.f-logo .f-mark .icon{width:27px;height:27px}
+.f-logo .f-txt b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;color:#fff;font-size:1.18rem;letter-spacing:.01em;line-height:1}
+.f-logo .f-txt span{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--olive-light)}
+.f-brand p{font-size:.92rem;color:#9fa9a4;max-width:320px}
+.f-social{display:flex;gap:10px;margin-top:18px}
+.f-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.07);display:grid;place-items:center;color:#cdd6d1;transition:.25s}
+.f-social a:hover{background:var(--olive);color:#fff}
+.f-social .icon{width:20px;height:20px}
+.footer h4{color:#fff;font-size:1rem;margin-bottom:18px}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.footer ul a{color:#aeb8b3;font-size:.92rem;transition:.2s}
+.footer ul a:hover{color:var(--olive-light);padding-left:4px}
+.f-contact li{display:flex;gap:11px;font-size:.92rem;color:#aeb8b3}
+.f-contact .icon{width:18px;height:18px;color:var(--olive-light);flex:none;margin-top:3px}
+.f-contact a{color:#dfe5e2;font-weight:600}
+.f-accred{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;padding:26px 0;border-bottom:1px solid rgba(255,255,255,.09)}
+.f-accred .fa-chip{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.16);border-radius:9px;padding:9px 14px;color:#cdd6d1;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.84rem}
+.f-accred .fa-chip .icon{width:17px;height:17px;color:var(--olive-light)}
+.f-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 0;font-size:.85rem;color:#8c958f;flex-wrap:wrap}
+.f-bottom a{color:#aeb8b3}
+.f-areas{color:#8c958f;font-size:.85rem;text-align:center;padding:0 0 30px;max-width:880px;margin:0 auto}
+@media(max-width:880px){.footer-grid{grid-template-columns:1fr 1fr;gap:34px}}
+@media(max-width:520px){.footer-grid{grid-template-columns:1fr}.f-bottom{flex-direction:column;text-align:center}}
+
+/* =========================================================
+   FLOATING ACTIONS
+   ========================================================= */
+.fab-wa{position:fixed;right:24px;bottom:24px;z-index:90;width:62px;height:62px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px rgba(37,211,102,.45);transition:transform .25s var(--ease)}
+.fab-wa:hover{transform:scale(1.07)}
+.fab-wa .icon{width:34px;height:34px}
+.fab-wa::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--wa);z-index:-1;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.55}70%{transform:scale(1.5);opacity:0}100%{opacity:0}}
+.fab-wa .fab-tip{position:absolute;right:74px;top:50%;transform:translateY(-50%);background:var(--navy);color:#fff;font-size:.82rem;font-weight:600;padding:8px 13px;border-radius:9px;white-space:nowrap;opacity:0;pointer-events:none;transition:.25s;box-shadow:var(--shadow)}
+.fab-wa .fab-tip::after{content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%) rotate(45deg);width:10px;height:10px;background:var(--navy)}
+.fab-wa:hover .fab-tip{opacity:1}
+.fab-call{position:fixed;left:24px;bottom:24px;z-index:90;width:60px;height:60px;border-radius:50%;background:var(--navy);color:#fff;display:none;place-items:center;box-shadow:0 12px 30px rgba(36,55,70,.4)}
+.fab-call .icon{width:28px;height:28px}
+@media(max-width:1040px){.fab-call{display:grid}}
+@media(max-width:600px){.fab-wa{width:58px;height:58px;right:18px;bottom:18px}.fab-call{width:56px;height:56px;left:18px;bottom:18px}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001s!important;transition-duration:.05s!important}
+  .hero-slide.active{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== SVG ICON SPRITE ===================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></symbol>
+  <symbol id="ic-wa" viewBox="0 0 32 32" fill="currentColor"><path d="M16.004 0h-.008C7.174 0 .02 7.156.02 15.984c0 3.5 1.124 6.74 3.04 9.38L1.07 31.2l5.99-1.918a15.86 15.86 0 0 0 8.944 2.74h.008C24.83 32.022 32 24.866 32 16.038 32 7.21 24.83.054 16.004 0Zm9.32 22.594c-.386 1.09-1.92 1.994-3.144 2.258-.836.178-1.93.32-5.61-1.204-4.71-1.952-7.74-6.736-7.976-7.046-.226-.31-1.92-2.556-1.92-4.878 0-2.322 1.18-3.464 1.656-3.95.39-.398.86-.58 1.146-.58.142 0 .27.007.386.013.33.014.496.034.714.556.272.65.93 2.252 1.01 2.42.082.168.164.396.05.62-.106.23-.2.33-.366.524-.166.194-.318.344-.484.55-.152.18-.324.376-.134.7.19.318.844 1.392 1.812 2.252 1.25 1.114 2.296 1.46 2.64 1.604.256.106.56.082.752-.124.244-.264.544-.704.848-1.138.216-.31.49-.35.778-.242.294.104 1.86.876 2.18 1.036.32.16.532.238.612.372.078.134.078.778-.308 1.868Z"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="ic-badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="m9 13-1.5 7L12 18l4.5 2L15 13"/><path d="m12 7 .9 1.8 2 .3-1.45 1.4.35 2L12 11.5 10.2 12.5l.35-2L9.1 9.1l2-.3L12 7Z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-quote-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></symbol>
+  <symbol id="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.9l-5.8 3.05 1.1-6.46-4.69-4.58 6.49-.94L12 2.5Z"/></symbol>
+  <symbol id="ic-google" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571.001-.001.002-.001.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></symbol>
+  <symbol id="ic-arrow-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="ic-chev-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></symbol>
+  <symbol id="ic-chev-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="ic-arrows-lr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-4 5 4 5M16 7l4 5-4 5"/></symbol>
+  <symbol id="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6 18 18M18 6 6 18"/></symbol>
+  <symbol id="ic-zoom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></symbol>
+  <symbol id="ic-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></symbol>
+  <!-- service icons -->
+  <symbol id="ic-roof" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 11 12 4l10 7"/><path d="M5 9.8V20h14V9.8"/><path d="M5 13h14M5 16.5h14"/></symbol>
+  <symbol id="ic-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5l-9.9 9.9a2.1 2.1 0 0 1-3-3l9.9-9.9a4 4 0 0 0-2-2Z"/><path d="M15 5.5 18.5 9"/></symbol>
+  <symbol id="ic-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5M3 17l9 5 9-5"/></symbol>
+  <symbol id="ic-chimney" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 5l9 7"/><path d="M5 10.5V20h14v-9.5"/><path d="M15 7V4h3v5"/></symbol>
+  <symbol id="ic-gutter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18"/><path d="M4 7v3a3 3 0 0 0 3 3h2v6a1.5 1.5 0 0 0 3 0v-6"/><path d="M3 4h18"/></symbol>
+  <symbol id="ic-sun-roof" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13 12 6l9 7"/><path d="M5 11.5V20h14v-8.5"/><circle cx="12" cy="15.5" r="2"/><path d="M12 11.5v.6M9.2 13l.4.4M14.8 13l-.4.4"/></symbol>
+  <symbol id="ic-tiles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="6" height="5" rx="1"/><rect x="3" y="13" width="6" height="6" rx="1"/><rect x="11" y="5" width="10" height="5" rx="1"/><rect x="11" y="13" width="10" height="6" rx="1"/></symbol>
+  <symbol id="ic-storm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16a4 4 0 0 1-.5-7.97 5.5 5.5 0 0 1 10.6-1.04A3.75 3.75 0 0 1 17 16"/><path d="m12 12-2 4h3l-2 4"/></symbol>
+  <symbol id="ic-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c8 0 14-5 14-14 0 0-9-1-13 4-2.4 3-1 9-1 9Z"/><path d="M5 19c2-5 5-7 8-8"/></symbol>
+  <symbol id="ic-fb" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12Z"/></symbol>
+  <symbol id="ic-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-thumb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3Z"/><path d="M7 11l4-7a2 2 0 0 1 3 1.8V9h4.5a2 2 0 0 1 2 2.4l-1.3 6A2 2 0 0 1 17 19H7"/></symbol>
+  <symbol id="ic-broom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5 11 13"/><path d="M8.5 11.5 4 16c-1 1-1 4-1 4s3 0 4-1l4.5-4.5"/><path d="m13 11 3 3"/></symbol>
+  <symbol id="ic-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9" cy="7" rx="6" ry="3"/><path d="M3 7v5c0 1.66 2.69 3 6 3M3 12v5c0 1.66 2.69 3 6 3"/><ellipse cx="15" cy="14" rx="6" ry="3"/><path d="M21 14v5c0 1.66-2.69 3-6 3"/></symbol>
+</svg>
+
+<!-- ===================== TOP BAR ===================== -->
+<div class="topbar">
+  <div class="container">
+    <div class="tb-left">
+      <svg class="icon"><use href="#ic-pin"/></svg>
+      <span>Covering all of Derbyshire &amp; surrounding areas</span>
+    </div>
+    <div class="tb-right">
+      <span class="tb-item tb-hide tb-mute"><svg class="icon"><use href="#ic-clock"/></svg>Mon–Sat · 7:30am–6:00pm</span>
+      <a class="tb-item" href="tel:+447700900123"><svg class="icon"><use href="#ic-phone"/></svg>07700 900123</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="#home" class="brand" aria-label="Roofing Derbyshire — home">
+      <img src="logo.png" alt="Roofing Derbyshire logo">
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-call" href="tel:+447700900123">
+        <span class="ring"><svg class="icon"><use href="#ic-phone"/></svg></span>
+        <span class="nav-call-text"><small>Call us today</small><b>07700 900123</b></span>
+      </a>
+      <a class="nav-call-icon" href="tel:+447700900123" aria-label="Call us"><svg class="icon"><use href="#ic-phone"/></svg></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><svg class="icon"><use href="#ic-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="nav-scrim" id="navScrim"></div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active" style="background-image:url('hero3.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('hero.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('hero2.jpg')"></div>
+  </div>
+  <div class="container">
+    <div class="hero-inner">
+      <span class="pill"><svg class="icon"><use href="#ic-star"/></svg> Rated 5.0 by Derbyshire homeowners</span>
+      <h1>Derbyshire's Trusted <span class="hl">Roofing Specialists</span></h1>
+      <p class="hero-sub">From a single slipped tile to a complete re-roof — quality workmanship you can rely on. Local, fully insured and guaranteed, with free no-obligation quotes across Derbyshire.</p>
+      <div class="hero-cta">
+        <a class="btn btn--lg" href="#contact">Get Your Free Quote <svg class="icon"><use href="#ic-arrow-r"/></svg></a>
+        <a class="btn btn--outline-light btn--lg" href="tel:+447700900123"><svg class="icon"><use href="#ic-phone"/></svg> 07700 900123</a>
+      </div>
+      <div class="hero-trust">
+        <span><svg class="icon"><use href="#ic-shield"/></svg> Fully Insured</span>
+        <span><svg class="icon"><use href="#ic-badge"/></svg> Workmanship Guaranteed</span>
+        <span><svg class="icon"><use href="#ic-home"/></svg> Local &amp; Family-Run</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-dots" id="heroDots"></div>
+  <div class="hero-nav">
+    <button class="hero-arrow" id="heroPrev" aria-label="Previous slide"><svg class="icon"><use href="#ic-chev-l"/></svg></button>
+    <button class="hero-arrow" id="heroNext" aria-label="Next slide"><svg class="icon"><use href="#ic-chev-r"/></svg></button>
+  </div>
+</section>
+
+<!-- ===================== TRUST / ACCREDITATIONS ===================== -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-row">
+      <div class="trust-item reveal"><div class="ti-ic"><svg class="icon"><use href="#ic-shield"/></svg></div><div><b>Fully Insured</b><span>Public liability cover on every job</span></div></div>
+      <div class="trust-item reveal d1"><div class="ti-ic"><svg class="icon"><use href="#ic-badge"/></svg></div><div><b>Guaranteed Work</b><span>Workmanship guarantee as standard</span></div></div>
+      <div class="trust-item reveal d2"><div class="ti-ic"><svg class="icon"><use href="#ic-quote-doc"/></svg></div><div><b>Free Quotes</b><span>Honest, no-obligation pricing</span></div></div>
+      <div class="trust-item reveal d3"><div class="ti-ic"><svg class="icon"><use href="#ic-clock"/></svg></div><div><b>Years of Experience</b><span>Time-served local roofers</span></div></div>
+    </div>
+    <!-- Accreditation logos: PLACEHOLDER chips — replace with real logo <img>s when supplied -->
+    <div class="accred reveal">
+      <span class="label">Accredited &amp; Insured</span>
+      <span class="accred-chip"><svg class="icon"><use href="#ic-badge"/></svg> NFRC <small>Member</small></span>
+      <span class="accred-chip"><svg class="icon"><use href="#ic-shield"/></svg> TrustMark <small>Registered</small></span>
+      <span class="accred-chip"><svg class="icon"><use href="#ic-check"/></svg> Checkatrade</span>
+      <span class="accred-chip"><svg class="icon"><use href="#ic-star"/></svg> Which? <small>Trusted Trader</small></span>
+      <span class="accred-chip"><svg class="icon"><use href="#ic-shield"/></svg> £5m <small>Public Liability</small></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="pad" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow center">What We Do</span>
+      <h2>Complete Roofing Services</h2>
+      <p>Whatever your roof needs, we've got it covered. Every job is carried out to the highest standard using quality materials, by roofers who treat your home like their own.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc-card reveal"><div class="svc-ic"><svg class="icon"><use href="#ic-wrench"/></svg></div><h3>Roof Repairs</h3><p>Fast, reliable fixes for leaks, slipped or broken tiles and storm damage — keeping your home watertight.</p></article>
+      <article class="svc-card reveal d1"><div class="svc-ic"><svg class="icon"><use href="#ic-roof"/></svg></div><h3>New Roofs &amp; Re-Roofing</h3><p>Complete roof replacements in quality slate and tile, built to last and fully guaranteed.</p></article>
+      <article class="svc-card reveal d2"><div class="svc-ic"><svg class="icon"><use href="#ic-layers"/></svg></div><h3>Flat Roofing</h3><p>Durable EPDM rubber, GRP fibreglass and felt flat roofs for extensions, garages and dormers.</p></article>
+      <article class="svc-card reveal d3"><div class="svc-ic"><svg class="icon"><use href="#ic-chimney"/></svg></div><h3>Chimney Repairs</h3><p>Repointing, rebuilds, flashing and leadwork to keep your chimney safe and weatherproof.</p></article>
+      <article class="svc-card reveal"><div class="svc-ic"><svg class="icon"><use href="#ic-gutter"/></svg></div><h3>Guttering, Fascias &amp; Soffits</h3><p>uPVC roofline replacement and gutter repairs to protect your home from water damage.</p></article>
+      <article class="svc-card reveal d1"><div class="svc-ic"><svg class="icon"><use href="#ic-sun-roof"/></svg></div><h3>Conservatory &amp; Warm Roofs</h3><p>Upgrade tired polycarbonate roofs to warm, insulated tiled roofs you can enjoy all year round.</p></article>
+      <article class="svc-card reveal d2"><div class="svc-ic"><svg class="icon"><use href="#ic-tiles"/></svg></div><h3>Slate &amp; Tile Roofing</h3><p>Traditional and modern slate and tile work, matched beautifully to your property.</p></article>
+      <article class="svc-card reveal d3"><div class="svc-ic"><svg class="icon"><use href="#ic-storm"/></svg></div><h3>Storm Damage &amp; Call-Outs</h3><p>Rapid response to storm and weather damage to secure and repair your roof quickly.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BEFORE / AFTER ===================== -->
+<section class="pad soft" id="work">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow center">The Transformation</span>
+      <h2>Before &amp; After</h2>
+      <p>Drag the slider on each project to see the difference for yourself — real roofs, real results, all completed here in Derbyshire.</p>
+    </div>
+
+    <div class="ba-grid">
+      <!-- Pair 1 -->
+      <div class="ba-wrap reveal">
+        <figure class="ba" style="--pos:50%">
+          <img class="ba-img ba-after" src="a1.jpg" alt="After — newly re-slated roof and repointed chimney">
+          <img class="ba-img ba-before" src="b1.jpg" alt="Before — damaged slate roof with broken tiles">
+          <span class="ba-label ba-label--before">Before</span>
+          <span class="ba-label ba-label--after">After</span>
+          <span class="ba-line"></span>
+          <span class="ba-handle"><svg class="icon"><use href="#ic-arrows-lr"/></svg></span>
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+        </figure>
+        <figcaption class="ba-cap"><svg class="icon"><use href="#ic-pin"/></svg> Slate Roof Renewal <small>Belper</small></figcaption>
+      </div>
+      <!-- Pair 2 -->
+      <div class="ba-wrap reveal d1">
+        <figure class="ba" style="--pos:50%">
+          <img class="ba-img ba-after" src="a2.jpg" alt="After — new warm tiled conservatory roof">
+          <img class="ba-img ba-before" src="b2.jpg" alt="Before — old polycarbonate conservatory roof">
+          <span class="ba-label ba-label--before">Before</span>
+          <span class="ba-label ba-label--after">After</span>
+          <span class="ba-line"></span>
+          <span class="ba-handle"><svg class="icon"><use href="#ic-arrows-lr"/></svg></span>
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+        </figure>
+        <figcaption class="ba-cap"><svg class="icon"><use href="#ic-pin"/></svg> Conservatory Warm Roof <small>Ripley</small></figcaption>
+      </div>
+      <!-- Pair 3 -->
+      <div class="ba-wrap reveal">
+        <figure class="ba" style="--pos:50%">
+          <img class="ba-img ba-after" src="a3.jpg" alt="After — fully re-tiled roof">
+          <img class="ba-img ba-before" src="b3.jpg" alt="Before — roof stripped back to battens">
+          <span class="ba-label ba-label--before">Before</span>
+          <span class="ba-label ba-label--after">After</span>
+          <span class="ba-line"></span>
+          <span class="ba-handle"><svg class="icon"><use href="#ic-arrows-lr"/></svg></span>
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+        </figure>
+        <figcaption class="ba-cap"><svg class="icon"><use href="#ic-pin"/></svg> Full Re-Roof <small>Matlock</small></figcaption>
+      </div>
+      <!-- Pair 4 -->
+      <div class="ba-wrap reveal d1">
+        <figure class="ba" style="--pos:50%">
+          <img class="ba-img ba-after" src="a4.jpg" alt="After — new grey tiled roof on extension">
+          <img class="ba-img ba-before" src="b4.jpg" alt="Before — old roof stripped during loft conversion">
+          <span class="ba-label ba-label--before">Before</span>
+          <span class="ba-label ba-label--after">After</span>
+          <span class="ba-line"></span>
+          <span class="ba-handle"><svg class="icon"><use href="#ic-arrows-lr"/></svg></span>
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+        </figure>
+        <figcaption class="ba-cap"><svg class="icon"><use href="#ic-pin"/></svg> Loft Conversion Re-Roof <small>Derby</small></figcaption>
+      </div>
+    </div>
+
+    <!-- transformation videos -->
+    <div class="ba-videos">
+      <div class="ba-video reveal">
+        <video src="before-after-animation-01.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <div class="vcap"><svg class="icon"><use href="#ic-play"/></svg> Transformation in motion</div>
+      </div>
+      <div class="ba-video reveal d1">
+        <video src="before-after-animation-02.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <div class="vcap"><svg class="icon"><use href="#ic-play"/></svg> From tired to transformed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECT GALLERY ===================== -->
+<section class="pad">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow center">Recent Work</span>
+      <h2>Project Gallery</h2>
+      <p>A selection of recently completed roofs across Derbyshire. Tap any image to take a closer look.</p>
+    </div>
+    <div class="gallery" id="gallery">
+      <figure><img src="hero3.jpg" alt="Slate roof with dormers, Derbyshire" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#ic-zoom"/></svg></span></figure>
+      <figure><img src="a1.jpg" alt="New slate roof and repointed chimney" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#ic-zoom"/></svg></span></figure>
+      <figure><img src="hero2.jpg" alt="Red tiled roof with dormer" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#ic-zoom"/></svg></span></figure>
+      <figure><img src="a4.jpg" alt="New grey tiled roof on extension" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#ic-zoom"/></svg></span></figure>
+      <figure><img src="hero.jpg" alt="Slate roof with Velux windows" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#ic-zoom"/></svg></span></figure>
+      <figure><img src="a3.jpg" alt="Fully re-tiled roof" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#ic-zoom"/></svg></span></figure>
+      <figure><img src="a2.jpg" alt="New warm conservatory roof" loading="lazy"><span class="g-zoom"><svg class="icon"><use href="#ic-zoom"/></svg></span></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY CHOOSE US ===================== -->
+<section class="pad why" id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <span class="eyebrow">Why Choose Us</span>
+        <h2>Roofing done properly, by people who care</h2>
+        <p style="color:#c6cfca;margin-bottom:34px;max-width:520px">We're a local, family-run roofing business built on doing things the right way — quality materials, tidy sites and honest advice. Here's what you can expect when you choose us.</p>
+        <div class="why-list">
+          <div class="why-item reveal"><div class="wi-ic"><svg class="icon"><use href="#ic-home"/></svg></div><div><h3>Local &amp; Family-Run</h3><p>Derbyshire born and based — you'll always deal with us directly.</p></div></div>
+          <div class="why-item reveal d1"><div class="wi-ic"><svg class="icon"><use href="#ic-shield"/></svg></div><div><h3>Fully Insured</h3><p>Comprehensive public liability cover for total peace of mind.</p></div></div>
+          <div class="why-item reveal d2"><div class="wi-ic"><svg class="icon"><use href="#ic-badge"/></svg></div><div><h3>Guaranteed Workmanship</h3><p>We stand behind every roof with a workmanship guarantee.</p></div></div>
+          <div class="why-item reveal d3"><div class="wi-ic"><svg class="icon"><use href="#ic-coins"/></svg></div><div><h3>Fair, Honest Pricing</h3><p>Clear written quotes with no hidden costs or hard sell.</p></div></div>
+          <div class="why-item reveal"><div class="wi-ic"><svg class="icon"><use href="#ic-broom"/></svg></div><div><h3>Clean &amp; Tidy</h3><p>We respect your home and leave every site spotless.</p></div></div>
+          <div class="why-item reveal d1"><div class="wi-ic"><svg class="icon"><use href="#ic-tiles"/></svg></div><div><h3>Quality Materials</h3><p>Only trusted, long-lasting materials make it onto your roof.</p></div></div>
+        </div>
+      </div>
+      <div class="why-visual reveal d2">
+        <img src="hero.jpg" alt="Freshly completed slate roof in Derbyshire">
+        <div class="why-badge">
+          <span class="wb-num">5.0</span>
+          <span class="wb-t">Top-rated roofers<small>Loved by Derbyshire homeowners</small></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section class="pad" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow center">Don't Just Take Our Word For It</span>
+      <h2>What Our Customers Say</h2>
+    </div>
+    <div class="rev-top reveal">
+      <div class="rev-score">
+        <svg class="icon"><use href="#ic-google"/></svg>
+        <div>
+          <span class="rs-num">5.0</span>
+          <div class="stars"><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg></div>
+        </div>
+        <small>Based on 60+<br>Google reviews</small>
+      </div>
+    </div>
+
+    <div class="rev-viewport" id="revViewport">
+      <div class="rev-track" id="revTrack">
+        <!-- PLACEHOLDER Google-style reviews — swap for real ones when available -->
+        <article class="rev-card">
+          <div class="rc-head"><div class="rc-av">S</div><div><div class="rc-name">Sarah Whittaker</div><div class="rc-meta">2 weeks ago</div></div><span class="rc-g"><svg class="icon"><use href="#ic-google"/></svg></span></div>
+          <div class="rc-stars"><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg></div>
+          <p>"Couldn't be happier with our new roof. From the quote to the finish they were professional, tidy and clearly took real pride in their work. Highly recommend."</p>
+          <div class="rc-loc"><svg class="icon"><use href="#ic-pin"/></svg> Belper</div>
+        </article>
+        <article class="rev-card">
+          <div class="rc-head"><div class="rc-av">J</div><div><div class="rc-name">James Thornton</div><div class="rc-meta">1 month ago</div></div><span class="rc-g"><svg class="icon"><use href="#ic-google"/></svg></span></div>
+          <div class="rc-stars"><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg></div>
+          <p>"Had a bad leak after a storm and they sorted it the same day. Honest, reliable and fairly priced — exactly what you want from a roofer. Thank you!"</p>
+          <div class="rc-loc"><svg class="icon"><use href="#ic-pin"/></svg> Duffield</div>
+        </article>
+        <article class="rev-card">
+          <div class="rc-head"><div class="rc-av">E</div><div><div class="rc-name">Emma Hardy</div><div class="rc-meta">1 month ago</div></div><span class="rc-g"><svg class="icon"><use href="#ic-google"/></svg></span></div>
+          <div class="rc-stars"><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg></div>
+          <p>"They replaced our tired old conservatory roof with a warm tiled one and it's transformed the room — we can finally use it all year. Brilliant job."</p>
+          <div class="rc-loc"><svg class="icon"><use href="#ic-pin"/></svg> Ripley</div>
+        </article>
+        <article class="rev-card">
+          <div class="rc-head"><div class="rc-av">D</div><div><div class="rc-name">David Mellor</div><div class="rc-meta">2 months ago</div></div><span class="rc-g"><svg class="icon"><use href="#ic-google"/></svg></span></div>
+          <div class="rc-stars"><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg></div>
+          <p>"Professional from start to finish. Turned up when they said they would, kept everything tidy and the finished roof looks fantastic. Couldn't fault them."</p>
+          <div class="rc-loc"><svg class="icon"><use href="#ic-pin"/></svg> Matlock</div>
+        </article>
+        <article class="rev-card">
+          <div class="rc-head"><div class="rc-av">C</div><div><div class="rc-name">Claire Bennett</div><div class="rc-meta">3 months ago</div></div><span class="rc-g"><svg class="icon"><use href="#ic-google"/></svg></span></div>
+          <div class="rc-stars"><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg></div>
+          <p>"Re-roofed our semi and did a superb job. Tidy, on time and great value. Lovely lads who clearly know their trade. Would use again without hesitation."</p>
+          <div class="rc-loc"><svg class="icon"><use href="#ic-pin"/></svg> Chesterfield</div>
+        </article>
+        <article class="rev-card">
+          <div class="rc-head"><div class="rc-av">M</div><div><div class="rc-name">Mark Ellison</div><div class="rc-meta">3 months ago</div></div><span class="rc-g"><svg class="icon"><use href="#ic-google"/></svg></span></div>
+          <div class="rc-stars"><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg></div>
+          <p>"Honest, fair-priced and genuinely good work. They explained everything clearly and there were no surprises. Our new roof looks superb. Highly recommended."</p>
+          <div class="rc-loc"><svg class="icon"><use href="#ic-pin"/></svg> Derby</div>
+        </article>
+      </div>
+    </div>
+    <div class="rev-controls">
+      <button class="rev-arrow" id="revPrev" aria-label="Previous reviews"><svg class="icon"><use href="#ic-chev-l"/></svg></button>
+      <div class="rev-dots" id="revDots"></div>
+      <button class="rev-arrow" id="revNext" aria-label="Next reviews"><svg class="icon"><use href="#ic-chev-r"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT / OWNER ===================== -->
+<section class="pad soft about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <img class="av-main" src="hero3.jpg" alt="Roofing work in progress in Derbyshire">
+        <img class="av-sub" src="a1.jpg" alt="Completed slate roof detail">
+      </div>
+      <div>
+        <span class="eyebrow">Meet The Team</span>
+        <h2>Local roofers you can trust</h2>
+        <!-- EDIT ME: owner name, years and personal story -->
+        <div class="about-owner">
+          <div class="ao-av">RD</div>
+          <div><b>[ Owner Name ]</b><span>Founder &amp; Master Roofer</span></div>
+        </div>
+        <p>Roofing Derbyshire is a local, family-run business built on a simple belief: every roof should be done properly, first time. Founded by <strong>[ Owner Name ]</strong>, a time-served roofer with over <strong>[ X ] years'</strong> hands-on experience, we've earned our reputation across Derbyshire one happy customer at a time.</p>
+        <p>When you call us, you deal with the people actually doing the work — no call centres, no pushy sales. Just honest advice, quality craftsmanship and a finish we're proud to put our name to.</p>
+        <div class="about-stats">
+          <div class="about-stat"><b>[ X ]+</b><span>Years' experience</span></div>
+          <div class="about-stat"><b>[ X ]+</b><span>Roofs completed</span></div>
+          <div class="about-stat"><b>5.0</b><span>Average rating</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="pad" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow center">Get In Touch</span>
+      <h2>Request Your Free Quote</h2>
+      <p>Fill in the form and it'll open WhatsApp with your details ready to send — or call us directly. We aim to reply within a few hours.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="ci-item">
+          <div class="ci-ic"><svg class="icon"><use href="#ic-phone"/></svg></div>
+          <div><small>Call us</small><a href="tel:+447700900123">07700 900123</a><p>Mon–Sat, 7:30am–6:00pm</p></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ic"><svg class="icon"><use href="#ic-wa"/></svg></div>
+          <div><small>WhatsApp</small><a href="https://wa.me/447700900123" target="_blank" rel="noopener">Message us anytime</a><p>Send photos of your roof for a faster quote</p></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ic"><svg class="icon"><use href="#ic-mail"/></svg></div>
+          <div><small>Email</small><a href="mailto:hello@roofingderbyshire.co.uk">hello@roofingderbyshire.co.uk</a><p>For quotes &amp; enquiries</p></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ic"><svg class="icon"><use href="#ic-pin"/></svg></div>
+          <div><small>Area covered</small><b>All of Derbyshire</b><p>Belper · Ripley · Matlock · Derby · Chesterfield &amp; surrounding areas</p></div>
+        </div>
+        <div class="contact-hours">
+          <b><svg class="icon"><use href="#ic-clock"/></svg> Opening Hours</b>
+          <div class="row"><span>Monday – Friday</span><span>7:30am – 6:00pm</span></div>
+          <div class="row"><span>Saturday</span><span>8:00am – 4:00pm</span></div>
+          <div class="row"><span>Sunday</span><span>Emergencies only</span></div>
+        </div>
+      </div>
+
+      <div class="form-card reveal d1">
+        <h3>Tell us about your roof</h3>
+        <p class="fc-sub">No obligation — just honest, friendly advice.</p>
+        <form id="quoteForm" novalidate>
+          <div class="field-row">
+            <div class="field"><label for="f-name">Name <span class="req">*</span></label><input id="f-name" name="name" type="text" placeholder="Your name" required></div>
+            <div class="field"><label for="f-phone">Phone <span class="req">*</span></label><input id="f-phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+          </div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="you@email.com (optional)"></div>
+          <div class="field">
+            <label for="f-service">Service needed</label>
+            <select id="f-service" name="service">
+              <option value="">Please choose…</option>
+              <option>Roof Repairs</option>
+              <option>New Roof / Re-Roofing</option>
+              <option>Flat Roofing</option>
+              <option>Chimney Repairs</option>
+              <option>Guttering, Fascias &amp; Soffits</option>
+              <option>Conservatory / Warm Roof</option>
+              <option>Slate &amp; Tile Roofing</option>
+              <option>Storm Damage / Emergency</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Tell us a little about the job, your address or postcode, and the best time to call…"></textarea></div>
+          <button type="submit" class="btn"><svg class="icon"><use href="#ic-wa"/></svg> Send via WhatsApp</button>
+          <div class="form-note"><svg class="icon"><use href="#ic-wa"/></svg> Opens WhatsApp with your details ready to send</div>
+          <div class="form-ok" id="formOk"><svg class="icon" style="color:#1f7a44"><use href="#ic-check"/></svg><span>Great — WhatsApp should now be open with your message ready. Just hit send and we'll be in touch shortly!</span></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Ready to sort your roof?</h2>
+    <p>Get a free, no-obligation quote today and see why homeowners across Derbyshire trust us with their roofs.</p>
+    <div class="cta-row">
+      <a class="btn btn--light btn--lg" href="tel:+447700900123"><svg class="icon"><use href="#ic-phone"/></svg> 07700 900123</a>
+      <a class="btn btn--lg" href="#contact">Get Your Free Quote <svg class="icon"><use href="#ic-arrow-r"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="f-brand">
+        <div class="f-logo">
+          <span class="f-mark"><svg class="icon"><use href="#ic-roof"/></svg></span>
+          <span class="f-txt"><b>ROOFING</b><span>Derbyshire</span></span>
+        </div>
+        <p>Local, family-run roofing specialists covering all of Derbyshire. Quality workmanship, fully insured, guaranteed — and always a fair, honest price.</p>
+        <div class="f-social">
+          <a href="#" aria-label="Facebook"><svg class="icon"><use href="#ic-fb"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg class="icon"><use href="#ic-ig"/></svg></a>
+          <a href="https://wa.me/447700900123" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icon"><use href="#ic-wa"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Roof Repairs</a></li>
+          <li><a href="#services">New Roofs &amp; Re-Roofing</a></li>
+          <li><a href="#services">Flat Roofing</a></li>
+          <li><a href="#services">Chimney Repairs</a></li>
+          <li><a href="#services">Guttering &amp; Roofline</a></li>
+          <li><a href="#services">Conservatory Roofs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Free Quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get In Touch</h4>
+        <ul class="f-contact">
+          <li><svg class="icon"><use href="#ic-phone"/></svg><a href="tel:+447700900123">07700 900123</a></li>
+          <li><svg class="icon"><use href="#ic-mail"/></svg><a href="mailto:hello@roofingderbyshire.co.uk">hello@roofingderbyshire.co.uk</a></li>
+          <li><svg class="icon"><use href="#ic-pin"/></svg><span>Covering all of Derbyshire</span></li>
+          <li><svg class="icon"><use href="#ic-clock"/></svg><span>Mon–Sat · 7:30am–6:00pm</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer accreditation chips — PLACEHOLDERS, swap for real logos -->
+    <div class="f-accred">
+      <span class="fa-chip"><svg class="icon"><use href="#ic-badge"/></svg> NFRC Member</span>
+      <span class="fa-chip"><svg class="icon"><use href="#ic-shield"/></svg> TrustMark</span>
+      <span class="fa-chip"><svg class="icon"><use href="#ic-check"/></svg> Checkatrade</span>
+      <span class="fa-chip"><svg class="icon"><use href="#ic-star"/></svg> Which? Trusted Trader</span>
+      <span class="fa-chip"><svg class="icon"><use href="#ic-shield"/></svg> Fully Insured</span>
+    </div>
+
+    <p class="f-areas">Proudly serving Belper, Ripley, Matlock, Derby, Chesterfield, Alfreton, Heanor, Ilkeston, Duffield, Wirksworth, Ashbourne, Bakewell and all surrounding Derbyshire areas.</p>
+
+    <div class="f-bottom">
+      <span>&copy; <span id="year"></span> Roofing Derbyshire. All rights reserved.</span>
+      <span>Website by Innov8 · <a href="#home">Back to top ↑</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== FLOATING ACTIONS ===================== -->
+<a class="fab-wa" href="https://wa.me/447700900123" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="fab-tip">Chat on WhatsApp</span>
+  <svg class="icon"><use href="#ic-wa"/></svg>
+</a>
+<a class="fab-call" href="tel:+447700900123" aria-label="Call us"><svg class="icon"><use href="#ic-phone"/></svg></a>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div class="lb" id="lb">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close"><svg class="icon"><use href="#ic-close"/></svg></button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous"><svg class="icon"><use href="#ic-chev-l"/></svg></button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next"><svg class="icon"><use href="#ic-chev-r"/></svg></button>
+</div>
+
+<script>
+/* =====================================================================
+   >>> EDIT ME: business phone / WhatsApp config (one place) <<<
+   ===================================================================== */
+const BIZ = {
+  waNumber: '447700900123',          // WhatsApp number, intl format, no + or spaces
+  bizName : 'Roofing Derbyshire'
+};
+
+/* ---------- year ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ---------- navbar scroll + mobile menu ---------- */
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 12), {passive:true});
+
+const navLinks = document.getElementById('navLinks');
+const navToggle = document.getElementById('navToggle');
+const navScrim = document.getElementById('navScrim');
+function closeMenu(){ navLinks.classList.remove('open'); navScrim.classList.remove('show'); document.body.classList.remove('menu-open'); navToggle.setAttribute('aria-expanded','false'); }
+navToggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  navScrim.classList.toggle('show', open);
+  document.body.classList.toggle('menu-open', open);
+  navToggle.setAttribute('aria-expanded', open);
+});
+navScrim.addEventListener('click', closeMenu);
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+/* ---------- HERO slider ---------- */
+(() => {
+  const slides = [...document.querySelectorAll('.hero-slide')];
+  const dotsWrap = document.getElementById('heroDots');
+  let i = 0, timer;
+  slides.forEach((_, n) => {
+    const d = document.createElement('button');
+    d.className = 'hero-dot' + (n === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Go to slide ' + (n + 1));
+    d.addEventListener('click', () => go(n, true));
+    dotsWrap.appendChild(d);
+  });
+  const dots = [...dotsWrap.children];
+  function go(n, manual){
+    slides[i].classList.remove('active'); dots[i].classList.remove('active');
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add('active'); dots[i].classList.add('active');
+    if (manual) restart();
+  }
+  const next = () => go(i + 1);
+  function start(){ timer = setInterval(next, 6000); }
+  function restart(){ clearInterval(timer); start(); }
+  document.getElementById('heroNext').addEventListener('click', () => go(i + 1, true));
+  document.getElementById('heroPrev').addEventListener('click', () => go(i - 1, true));
+  const hero = document.querySelector('.hero');
+  hero.addEventListener('mouseenter', () => clearInterval(timer));
+  hero.addEventListener('mouseleave', start);
+  start();
+})();
+
+/* ---------- BEFORE / AFTER sliders ---------- */
+document.querySelectorAll('.ba').forEach(ba => {
+  const range = ba.querySelector('.ba-range');
+  const apply = v => ba.style.setProperty('--pos', v + '%');
+  range.addEventListener('input', () => apply(range.value));
+  apply(range.value);
+});
+
+/* ---------- REVIEWS slider (autoplay + swipe) ---------- */
+(() => {
+  const viewport = document.getElementById('revViewport');
+  const track = document.getElementById('revTrack');
+  const cards = [...track.children];
+  const dotsWrap = document.getElementById('revDots');
+  let idx = 0, step = 0, perView = 1, maxIdx = 0, timer;
+
+  function measure(){
+    step = cards.length > 1 ? (cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().left) : cards[0].offsetWidth;
+    perView = Math.max(1, Math.round(viewport.clientWidth / step));
+    maxIdx = Math.max(0, cards.length - perView);
+    idx = Math.min(idx, maxIdx);
+    buildDots();
+    render();
+  }
+  function buildDots(){
+    dotsWrap.innerHTML = '';
+    for (let n = 0; n <= maxIdx; n++){
+      const d = document.createElement('button');
+      d.className = 'rev-dot' + (n === idx ? ' active' : '');
+      d.setAttribute('aria-label', 'Go to review group ' + (n + 1));
+      d.addEventListener('click', () => { idx = n; render(); restart(); });
+      dotsWrap.appendChild(d);
+    }
+  }
+  function render(){
+    track.style.transform = 'translateX(' + (-idx * step) + 'px)';
+    [...dotsWrap.children].forEach((d, n) => d.classList.toggle('active', n === idx));
+  }
+  function go(n){ idx = (n > maxIdx) ? 0 : (n < 0 ? maxIdx : n); render(); }
+  document.getElementById('revNext').addEventListener('click', () => { go(idx + 1); restart(); });
+  document.getElementById('revPrev').addEventListener('click', () => { go(idx - 1); restart(); });
+  function start(){ timer = setInterval(() => go(idx + 1), 4500); }
+  function restart(){ clearInterval(timer); start(); }
+
+  /* swipe / drag */
+  let down = false, startX = 0, dragged = 0;
+  viewport.addEventListener('pointerdown', e => { down = true; startX = e.clientX; dragged = 0; clearInterval(timer); track.style.transition = 'none'; });
+  addEventListener('pointermove', e => { if(!down) return; dragged = e.clientX - startX; track.style.transform = 'translateX(' + (-idx * step + dragged) + 'px)'; });
+  addEventListener('pointerup', () => {
+    if(!down) return; down = false; track.style.transition = '';
+    if (Math.abs(dragged) > step * 0.22) go(idx + (dragged < 0 ? 1 : -1)); else render();
+    start();
+  });
+
+  addEventListener('resize', measure);
+  measure(); start();
+})();
+
+/* ---------- PROJECT GALLERY lightbox ---------- */
+(() => {
+  const figs = [...document.querySelectorAll('#gallery figure img')];
+  const lb = document.getElementById('lb');
+  const lbImg = document.getElementById('lbImg');
+  let cur = 0;
+  function open(n){ cur = n; lbImg.src = figs[cur].src; lbImg.alt = figs[cur].alt; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function close(){ lb.classList.remove('open'); document.body.style.overflow = ''; }
+  function move(d){ cur = (cur + d + figs.length) % figs.length; lbImg.src = figs[cur].src; lbImg.alt = figs[cur].alt; }
+  figs.forEach((img, n) => img.closest('figure').addEventListener('click', () => open(n)));
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); move(1); });
+  document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); move(-1); });
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  addEventListener('keydown', e => { if(!lb.classList.contains('open')) return; if(e.key==='Escape') close(); if(e.key==='ArrowRight') move(1); if(e.key==='ArrowLeft') move(-1); });
+})();
+
+/* ---------- CONTACT form → WhatsApp redirect ---------- */
+document.getElementById('quoteForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target;
+  const name = f.name.value.trim();
+  const phone = f.phone.value.trim();
+  if (!name || !phone){ if(!name) f.name.focus(); else f.phone.focus(); return; }
+  const email = f.email.value.trim();
+  const service = f.service.value.trim();
+  const message = f.message.value.trim();
+
+  let text = 'Hi ' + BIZ.bizName + ', I\'d like a free quote.\n\n';
+  text += 'Name: ' + name + '\n';
+  text += 'Phone: ' + phone + '\n';
+  if (email)   text += 'Email: ' + email + '\n';
+  if (service) text += 'Service: ' + service + '\n';
+  if (message) text += '\n' + message;
+
+  const url = 'https://wa.me/' + BIZ.waNumber + '?text=' + encodeURIComponent(text);
+  window.open(url, '_blank');
+  document.getElementById('formOk').classList.add('show');
+});
+
+/* ---------- reveal on scroll ---------- */
+(() => {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>
