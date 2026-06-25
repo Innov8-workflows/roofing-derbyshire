@@ -187,10 +187,10 @@ section{position:relative}
    HERO SLIDER
    ========================================================= */
 .hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;background:var(--navy)}
-.hero-slides{position:absolute;inset:0;z-index:0}
-.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s var(--ease);background-size:cover;background-position:center;transform:scale(1.06)}
-.hero-slide.active{opacity:1;animation:kenburns 8s ease-out forwards}
-@keyframes kenburns{from{transform:scale(1.12)}to{transform:scale(1)}}
+.hero-slides{position:absolute;inset:0;z-index:0;background:var(--navy)}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s var(--ease)}
+.hero-slide.active{opacity:1}
+.hero-slide video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;background:var(--navy)}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,28,34,.62) 0%,rgba(20,28,34,.5) 45%,rgba(20,28,34,.8) 100%)}
 .hero .container{position:relative;z-index:2;padding-top:60px;padding-bottom:60px}
 .hero-inner{max-width:820px;margin:0 auto;text-align:center;color:#fff}
@@ -579,9 +579,9 @@ section{position:relative}
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="home">
   <div class="hero-slides" id="heroSlides">
-    <div class="hero-slide active" style="background-image:url('hero3.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('hero.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('hero2.jpg')"></div>
+    <div class="hero-slide active"><video src="hero-orbital-01.mp4" poster="hero-orbital-01-poster.jpg" muted playsinline preload="auto"></video></div>
+    <div class="hero-slide"><video src="hero-orbital-02.mp4" poster="hero-orbital-02-poster.jpg" muted playsinline preload="auto"></video></div>
+    <div class="hero-slide"><video src="orbital-hero-01.mp4" poster="orbital-hero-01-poster.jpg" muted playsinline preload="auto"></video></div>
   </div>
   <div class="container">
     <div class="hero-inner">
@@ -1065,31 +1065,38 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMen
 /* ---------- HERO slider ---------- */
 (() => {
   const slides = [...document.querySelectorAll('.hero-slide')];
+  const videos = slides.map(s => s.querySelector('video'));
   const dotsWrap = document.getElementById('heroDots');
-  let i = 0, timer;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let i = 0;
   slides.forEach((_, n) => {
     const d = document.createElement('button');
     d.className = 'hero-dot' + (n === 0 ? ' active' : '');
     d.setAttribute('aria-label', 'Go to slide ' + (n + 1));
-    d.addEventListener('click', () => go(n, true));
+    d.addEventListener('click', () => go(n));
     dotsWrap.appendChild(d);
   });
   const dots = [...dotsWrap.children];
-  function go(n, manual){
-    slides[i].classList.remove('active'); dots[i].classList.remove('active');
+  function playActive(){
+    if (reduce) return;                 // honour reduced-motion: show poster, don't autoplay
+    const v = videos[i];
+    try { v.currentTime = 0; } catch(e){}
+    v.play().catch(() => {});
+  }
+  function go(n){
+    const prev = i;
+    slides[prev].classList.remove('active'); dots[prev].classList.remove('active');
     i = (n + slides.length) % slides.length;
     slides[i].classList.add('active'); dots[i].classList.add('active');
-    if (manual) restart();
+    playActive();
+    // pause + rewind the outgoing clip once it has faded out
+    setTimeout(() => { if (prev !== i) { try { videos[prev].pause(); videos[prev].currentTime = 0; } catch(e){} } }, 1500);
   }
-  const next = () => go(i + 1);
-  function start(){ timer = setInterval(next, 6000); }
-  function restart(){ clearInterval(timer); start(); }
-  document.getElementById('heroNext').addEventListener('click', () => go(i + 1, true));
-  document.getElementById('heroPrev').addEventListener('click', () => go(i - 1, true));
-  const hero = document.querySelector('.hero');
-  hero.addEventListener('mouseenter', () => clearInterval(timer));
-  hero.addEventListener('mouseleave', start);
-  start();
+  // each orbital clip plays in full, then cross-fades to the next
+  videos.forEach((v, n) => v.addEventListener('ended', () => { if (n === i) go(i + 1); }));
+  document.getElementById('heroNext').addEventListener('click', () => go(i + 1));
+  document.getElementById('heroPrev').addEventListener('click', () => go(i - 1));
+  playActive();
 })();
 
 /* ---------- Project videos: play only while on-screen (saves data, esp. mobile) ---------- */
