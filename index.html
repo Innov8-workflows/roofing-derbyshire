@@ -229,13 +229,24 @@ section{position:relative}
 .trust-item span{font-size:.86rem;color:var(--muted)}
 .accred{border-top:1px dashed var(--line);padding:26px 0;display:flex;align-items:center;justify-content:center;gap:14px 30px;flex-wrap:wrap}
 .accred .label{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.accred-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 /* Accreditation chips — PLACEHOLDERS. Swap for real <img> logos when supplied. */
 .accred-chip{display:inline-flex;align-items:center;gap:9px;border:1.5px solid var(--line);border-radius:11px;padding:11px 16px;color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.92rem;background:#fff;filter:grayscale(.15);transition:.25s}
 .accred-chip:hover{border-color:var(--olive-light);box-shadow:var(--shadow-sm)}
 .accred-chip .icon{width:20px;height:20px;color:var(--olive-600)}
 .accred-chip small{font-weight:500;color:var(--muted);font-size:.74rem;font-family:'Inter',sans-serif}
 @media(max-width:880px){.trust-row{grid-template-columns:repeat(2,1fr);gap:26px 20px}}
-@media(max-width:480px){.trust-row{grid-template-columns:1fr}}
+@media(max-width:560px){
+  .trust-row{grid-template-columns:1fr 1fr;gap:22px 12px;padding:32px 0}
+  .trust-item{flex-direction:column;text-align:center;align-items:center;gap:10px}
+  .trust-item .ti-ic{width:48px;height:48px}
+  .trust-item b{font-size:.96rem}
+  .trust-item span{font-size:.82rem;line-height:1.4}
+  .accred{flex-direction:column;gap:16px;padding:24px 0}
+  .accred-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%}
+  .accred-chips .accred-chip{justify-content:center;text-align:center}
+  .accred-chips .accred-chip:last-child{grid-column:1 / -1}
+}
 
 /* =========================================================
    SERVICES
@@ -619,11 +630,13 @@ section{position:relative}
     <!-- Accreditation logos: PLACEHOLDER chips — replace with real logo <img>s when supplied -->
     <div class="accred reveal">
       <span class="label">Accredited &amp; Insured</span>
-      <span class="accred-chip"><svg class="icon"><use href="#ic-badge"/></svg> NFRC <small>Member</small></span>
-      <span class="accred-chip"><svg class="icon"><use href="#ic-shield"/></svg> TrustMark <small>Registered</small></span>
-      <span class="accred-chip"><svg class="icon"><use href="#ic-check"/></svg> Checkatrade</span>
-      <span class="accred-chip"><svg class="icon"><use href="#ic-star"/></svg> Which? <small>Trusted Trader</small></span>
-      <span class="accred-chip"><svg class="icon"><use href="#ic-shield"/></svg> £5m <small>Public Liability</small></span>
+      <div class="accred-chips">
+        <span class="accred-chip"><svg class="icon"><use href="#ic-badge"/></svg> NFRC <small>Member</small></span>
+        <span class="accred-chip"><svg class="icon"><use href="#ic-shield"/></svg> TrustMark <small>Registered</small></span>
+        <span class="accred-chip"><svg class="icon"><use href="#ic-check"/></svg> Checkatrade</span>
+        <span class="accred-chip"><svg class="icon"><use href="#ic-star"/></svg> Which? <small>Trusted Trader</small></span>
+        <span class="accred-chip"><svg class="icon"><use href="#ic-shield"/></svg> £5m <small>Public Liability</small></span>
+      </div>
     </div>
   </div>
 </section>
