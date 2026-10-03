@@ -437,6 +437,10 @@ section{position:relative}
 .form-ok{display:none;align-items:flex-start;gap:12px;background:#eaf6ee;border:1px solid #bfe6cd;color:#1f7a44;border-radius:12px;padding:14px 16px;margin-top:16px;font-size:.92rem}
 .form-ok.show{display:flex}
 .form-ok .icon{width:20px;height:20px;flex:none;margin-top:2px}
+.form-err{display:none;background:#fdecec;border:1px solid #f3c4c4;color:#9b2c2c;border-radius:12px;padding:14px 16px;margin-top:16px;font-size:.92rem}
+.form-err.show{display:block}
+.form-err a{color:inherit;font-weight:700}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 @media(max-width:880px){.contact-grid{grid-template-columns:1fr;gap:40px}.field-row{grid-template-columns:1fr}}
 
 /* =========================================================
@@ -944,9 +948,11 @@ section{position:relative}
             </select>
           </div>
           <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Tell us a little about the job, your address or postcode, and the best time to call…"></textarea></div>
-          <button type="submit" class="btn"><svg class="icon"><use href="#ic-wa"/></svg> Send via WhatsApp</button>
-          <div class="form-note"><svg class="icon"><use href="#ic-wa"/></svg> Opens WhatsApp with your details ready to send</div>
-          <div class="form-ok" id="formOk"><svg class="icon" style="color:#1f7a44"><use href="#ic-check"/></svg><span>Great — WhatsApp should now be open with your message ready. Just hit send and we'll be in touch shortly!</span></div>
+          <div class="hp" aria-hidden="true"><label for="f-hp">Leave this empty</label><input id="f-hp" name="company_website" type="text" tabindex="-1" autocomplete="off"></div>
+          <button type="submit" class="btn" id="formBtn">Get my free quote</button>
+          <div class="form-note">We'll text you straight back to confirm</div>
+          <div class="form-ok" id="formOk"><svg class="icon" style="color:#1f7a44"><use href="#ic-check"/></svg><span>Thanks — we've got your details. You'll get a text from us in a moment and we'll call you shortly.</span></div>
+          <div class="form-err" id="formErr"><span>Sorry, that didn't send. Please call us on <a href="tel:+447700900123">07700 900123</a> or <a href="https://wa.me/447700900123" target="_blank" rel="noopener">message us on WhatsApp</a>.</span></div>
         </form>
       </div>
     </div>
@@ -1187,27 +1193,47 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMen
   addEventListener('keydown', e => { if(!lb.classList.contains('open')) return; if(e.key==='Escape') close(); if(e.key==='ArrowRight') move(1); if(e.key==='ArrowLeft') move(-1); });
 })();
 
-/* ---------- CONTACT form → WhatsApp redirect ---------- */
-document.getElementById('quoteForm').addEventListener('submit', e => {
+/* ---------- CONTACT form → GoHighLevel (via the ghl-lead Worker) ---------- */
+// The Worker holds the GHL token and creates the contact + opportunity; GHL's
+// "website lead" workflows take it from there. Posted as text/plain so the
+// browser skips the CORS preflight. Never switch this to sendBeacon: it can't
+// report failure, and a lost lead must show the call/WhatsApp fallback.
+const LEAD_ENDPOINT = 'https://ghl-lead.jamie-innov8workflows.workers.dev/?site=roofing-derbyshire';
+document.getElementById('quoteForm').addEventListener('submit', async e => {
   e.preventDefault();
   const f = e.target;
   const name = f.name.value.trim();
   const phone = f.phone.value.trim();
   if (!name || !phone){ if(!name) f.name.focus(); else f.phone.focus(); return; }
-  const email = f.email.value.trim();
-  const service = f.service.value.trim();
-  const message = f.message.value.trim();
 
-  let text = 'Hi ' + BIZ.bizName + ', I\'d like a free quote.\n\n';
-  text += 'Name: ' + name + '\n';
-  text += 'Phone: ' + phone + '\n';
-  if (email)   text += 'Email: ' + email + '\n';
-  if (service) text += 'Service: ' + service + '\n';
-  if (message) text += '\n' + message;
+  const btn = document.getElementById('formBtn');
+  const ok = document.getElementById('formOk');
+  const err = document.getElementById('formErr');
+  ok.classList.remove('show'); err.classList.remove('show');
+  btn.disabled = true; btn.textContent = 'Sending…';
 
-  const url = 'https://wa.me/' + BIZ.waNumber + '?text=' + encodeURIComponent(text);
-  window.open(url, '_blank');
-  document.getElementById('formOk').classList.add('show');
+  try {
+    const r = await fetch(LEAD_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+      body: JSON.stringify({
+        name, phone,
+        email: f.email.value.trim(),
+        service: f.service.value.trim(),
+        message: f.message.value.trim(),
+        company_website: f.company_website.value,
+        page: location.href
+      })
+    });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || !j.ok) throw new Error(j.error || 'HTTP ' + r.status);
+    f.reset();
+    ok.classList.add('show');
+    btn.textContent = 'Sent ✓';
+  } catch (_) {
+    err.classList.add('show');
+    btn.disabled = false; btn.textContent = 'Get my free quote';
+  }
 });
 
 /* ---------- reveal on scroll ---------- */
