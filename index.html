@@ -441,6 +441,9 @@ section{position:relative}
 .form-err.show{display:block}
 .form-err a{color:inherit;font-weight:700}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.section-head p a{color:var(--olive);font-weight:600}
+.booking-card{max-width:920px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden}
+.booking-card iframe{display:block;width:100%;min-height:640px;border:0;overflow:hidden}
 @media(max-width:880px){.contact-grid{grid-template-columns:1fr;gap:40px}.field-row{grid-template-columns:1fr}}
 
 /* =========================================================
@@ -895,7 +898,7 @@ section{position:relative}
     <div class="section-head">
       <span class="eyebrow center">Get In Touch</span>
       <h2>Request Your Free Quote</h2>
-      <p>Fill in the form and it'll open WhatsApp with your details ready to send — or call us directly. We aim to reply within a few hours.</p>
+      <p>Fill in the form and we'll text you straight back, call us directly, or <a href="#book">pick a time for a free survey</a>.</p>
     </div>
     <div class="contact-grid">
       <div class="contact-info reveal">
@@ -959,6 +962,20 @@ section{position:relative}
   </div>
 </section>
 
+<section class="pad soft" id="book">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow center">Free Roof Survey</span>
+      <h2>Pick a Time That Suits You</h2>
+      <p>Choose a slot and we'll come out, have a proper look and give you a free, no-obligation quote. You'll get a text to confirm.</p>
+    </div>
+    <div class="booking-card reveal">
+      <iframe src="https://api.leadconnectorhq.com/widget/booking/mlRYE9WhRNIRoF2ZKrmk" id="mlRYE9WhRNIRoF2ZKrmk_booking" title="Book a free roof survey" scrolling="no"></iframe>
+    </div>
+  </div>
+</section>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
 <!-- ===================== FINAL CTA ===================== -->
 <section class="final-cta">
   <div class="container">
@@ -967,6 +984,7 @@ section{position:relative}
     <div class="cta-row">
       <a class="btn btn--light btn--lg" href="tel:+447700900123"><svg class="icon"><use href="#ic-phone"/></svg> 07700 900123</a>
       <a class="btn btn--lg" href="#contact">Get Your Free Quote <svg class="icon"><use href="#ic-arrow-r"/></svg></a>
+      <a class="btn btn--outline-light btn--lg" href="#book">Book a Free Survey</a>
     </div>
   </div>
 </section>
@@ -1006,6 +1024,7 @@ section{position:relative}
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#contact">Free Quote</a></li>
+          <li><a href="#book">Book a Survey</a></li>
         </ul>
       </div>
       <div>
