@@ -1241,7 +1241,10 @@ document.getElementById('quoteForm').addEventListener('submit', async e => {
         service: f.service.value.trim(),
         message: f.message.value.trim(),
         company_website: f.company_website.value,
-        page: location.href
+        // Page URL (keeps any gclid/fbclid/utm tags on this one-page site) and
+        // referrer let the Worker record where the lead came from. Nothing stored.
+        page: location.href,
+        referrer: document.referrer
       })
     });
     const j = await r.json().catch(() => ({}));
