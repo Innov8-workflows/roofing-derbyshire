@@ -497,10 +497,10 @@ section{position:relative}
 .fab-wa .fab-tip{position:absolute;right:74px;top:50%;transform:translateY(-50%);background:var(--navy);color:#fff;font-size:.82rem;font-weight:600;padding:8px 13px;border-radius:9px;white-space:nowrap;opacity:0;pointer-events:none;transition:.25s;box-shadow:var(--shadow)}
 .fab-wa .fab-tip::after{content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%) rotate(45deg);width:10px;height:10px;background:var(--navy)}
 .fab-wa:hover .fab-tip{opacity:1}
-.fab-call{position:fixed;left:24px;bottom:24px;z-index:90;width:60px;height:60px;border-radius:50%;background:var(--navy);color:#fff;display:none;place-items:center;box-shadow:0 12px 30px rgba(36,55,70,.4)}
+.fab-call{position:fixed;right:25px;bottom:100px;z-index:90;width:60px;height:60px;border-radius:50%;background:var(--navy);color:#fff;display:none;place-items:center;box-shadow:0 12px 30px rgba(36,55,70,.4)}
 .fab-call .icon{width:28px;height:28px}
 @media(max-width:1040px){.fab-call{display:grid}}
-@media(max-width:600px){.fab-wa{width:58px;height:58px;right:18px;bottom:18px}.fab-call{width:56px;height:56px;left:18px;bottom:18px}}
+@media(max-width:600px){.fab-wa{width:58px;height:58px;right:18px;bottom:18px}.fab-call{width:56px;height:56px;right:19px;bottom:88px}}
 
 /* reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
@@ -1266,5 +1266,6 @@ document.getElementById('quoteForm').addEventListener('submit', async e => {
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 })();
 </script>
+<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6ac27372d2e323137452f573"></script>
 </body>
 </html>
